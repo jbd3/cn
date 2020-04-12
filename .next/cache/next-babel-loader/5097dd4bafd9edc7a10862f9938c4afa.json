@@ -1,0 +1,1 @@
+{"ast":null,"code":"export default Card();","map":{"version":3,"sources":["/Users/jakedouglas 1/development/nextJs/next-learn-demo/7.2-api-routes/components/Card.js"],"names":["Card"],"mappings":"AAAA,eAAeA,IAAI,EAAnB","sourcesContent":["export default Card()"]},"metadata":{},"sourceType":"module"}
