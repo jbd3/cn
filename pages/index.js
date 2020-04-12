@@ -28,9 +28,9 @@ export default function Index() {
         <div className="toggle">
           <Toggle text={`${officialWords ? 'Use official words' : 'Use random words'}`} onToggle={() => setOfficialWords(!officialWords)} checked={officialWords} />
         </div>
-        <div className='toggle'>
+        {/* <div className='toggle'>
           <Toggle text='Duet Mode' onToggle={() => setIsGreenMode(!isGreenMode)} checked={isGreenMode} />
-        </div>
+        </div> */}
         <NewGameButton solid officialWords={officialWords} isGreenMode={isGreenMode} />
         <div className="mb-4 token-form">
           <div className="flex bg-gray-100 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">

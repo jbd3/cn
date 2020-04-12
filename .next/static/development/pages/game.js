@@ -686,11 +686,7 @@ function NewGameButton(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-<<<<<<< HEAD
-      lineNumber: 31,
-=======
-      lineNumber: 32,
->>>>>>> master
+      lineNumber: 33,
       columnNumber: 5
     }
   }, "New Game");
@@ -17600,7 +17596,7 @@ function Game() {
 
 /***/ }),
 
-/***/ 2:
+/***/ 3:
 /*!*********************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fgame&absolutePagePath=%2FUsers%2Fjakedouglas%201%2Fdevelopment%2FnextJs%2Fcn%2Fpages%2Fgame.js ***!
   \*********************************************************************************************************************************************/
@@ -17623,5 +17619,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[3,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=game.js.map

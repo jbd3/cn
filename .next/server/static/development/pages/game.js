@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -880,11 +880,7 @@ function NewGameButton({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-<<<<<<< HEAD
-      lineNumber: 31,
-=======
-      lineNumber: 32,
->>>>>>> master
+      lineNumber: 33,
       columnNumber: 5
     }
   }, "New Game");
@@ -3072,7 +3068,7 @@ function Game() {
 
 /***/ }),
 
-/***/ 4:
+/***/ 5:
 /*!*****************************!*\
   !*** multi ./pages/game.js ***!
   \*****************************/
