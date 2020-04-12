@@ -249,7 +249,7 @@ function Index() {
       lineNumber: 84,
       columnNumber: 11
     }
-  })), boardMap && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("div", {
+  })), Array.isArray(boardMap) && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("div", {
     className: "link-container",
     onClick: function onClick() {
       return copyToClipboard();
@@ -571,38 +571,38 @@ function Loader() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 3,
-      columnNumber: 31
+      lineNumber: 4,
+      columnNumber: 7
     }
   }), __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 4,
-      columnNumber: 17
+      columnNumber: 18
     }
   }), __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 4,
-      columnNumber: 28
+      columnNumber: 29
     }
   }), __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 4,
-      columnNumber: 39
+      columnNumber: 40
     }
   }), __jsx("style", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 5,
+      lineNumber: 6,
       columnNumber: 7
     }
-  }, "\n      .lds-ring {\n        display: inline-block;\n        position: relative;\n        width: 80px;\n        height: 80px;\n      }\n      .lds-ring div {\n        box-sizing: border-box;\n        display: block;\n        position: absolute;\n        width: 64px;\n        height: 64px;\n        margin: 8px;\n        border: 8px solid #fff;\n        border-radius: 50%;\n        animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;\n        border-color: #fff transparent transparent transparent;\n      }\n      .lds-ring div:nth-child(1) {\n        animation-delay: -0.45s;\n      }\n      .lds-ring div:nth-child(2) {\n        animation-delay: -0.3s;\n      }\n      .lds-ring div:nth-child(3) {\n        animation-delay: -0.15s;\n      }\n      @keyframes lds-ring {\n        0% {\n          transform: rotate(0deg);\n        }\n        100% {\n          transform: rotate(360deg);\n        }\n      }\n      "));
+  }, "\n      .lds-ring {\n        display: inline-block;\n        position: relative;\n        width: 80px;\n        height: 80vh;\n      }\n      .lds-ring div {\n        box-sizing: border-box;\n        display: block;\n        position: absolute;\n        width: 64px;\n        height: 64px;\n        margin: 8px;\n        border: 8px solid #fff;\n        border-radius: 50%;\n        animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;\n        border-color: #fff transparent transparent transparent;\n      }\n      .lds-ring div:nth-child(1) {\n        animation-delay: -0.45s;\n      }\n      .lds-ring div:nth-child(2) {\n        animation-delay: -0.3s;\n      }\n      .lds-ring div:nth-child(3) {\n        animation-delay: -0.15s;\n      }\n      @keyframes lds-ring {\n        0% {\n          transform: rotate(0deg);\n        }\n        100% {\n          transform: rotate(360deg);\n        }\n      }\n      "));
 }
 
 /***/ }),
@@ -660,9 +660,8 @@ function NewGameButton(_ref) {
       body: body
     }) // .then(() => Router.push(`/game?token=${token}`))
     ["catch"](function (err) {
-      return console.log('Error adding new game: ', err);
-    })["finally"](function () {
-      return 'Done trying to get new game';
+      console.error('Error adding new game: ', err);
+      next_router__WEBPACK_IMPORTED_MODULE_3___default.a.push("/404");
     });
   };
 
@@ -672,7 +671,7 @@ function NewGameButton(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30,
+      lineNumber: 32,
       columnNumber: 5
     }
   }, "New Game");
@@ -17536,7 +17535,7 @@ function Game() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19,
+      lineNumber: 18,
       columnNumber: 9
     }
   }, "\n        ")));
@@ -17544,7 +17543,7 @@ function Game() {
 
 /***/ }),
 
-/***/ 3:
+/***/ 2:
 /*!*********************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fgame&absolutePagePath=%2FUsers%2Fjakedouglas%201%2Fdevelopment%2FnextJs%2Fcn%2Fpages%2Fgame.js ***!
   \*********************************************************************************************************************************************/
@@ -17567,5 +17566,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=game.js.map

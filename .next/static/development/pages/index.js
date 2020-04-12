@@ -104,9 +104,8 @@ function NewGameButton(_ref) {
       body: body
     }) // .then(() => Router.push(`/game?token=${token}`))
     ["catch"](function (err) {
-      return console.log('Error adding new game: ', err);
-    })["finally"](function () {
-      return 'Done trying to get new game';
+      console.error('Error adding new game: ', err);
+      next_router__WEBPACK_IMPORTED_MODULE_3___default.a.push("/404");
     });
   };
 
@@ -116,7 +115,7 @@ function NewGameButton(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30,
+      lineNumber: 32,
       columnNumber: 5
     }
   }, "New Game");
@@ -5923,7 +5922,7 @@ function Index() {
 
 /***/ }),
 
-/***/ 2:
+/***/ 1:
 /*!******************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fjakedouglas%201%2Fdevelopment%2FnextJs%2Fcn%2Fpages%2Findex.js ***!
   \******************************************************************************************************************************************/
@@ -5946,5 +5945,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

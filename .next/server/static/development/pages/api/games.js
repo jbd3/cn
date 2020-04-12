@@ -88,29 +88,10 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
-
-/***/ "./constants.js":
-/*!**********************!*\
-  !*** ./constants.js ***!
-  \**********************/
-/*! exports provided: gameStatusToString */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "gameStatusToString", function() { return gameStatusToString; });
-const gameStatusToString = {
-  1: "Red's turn",
-  2: "Blue's turn",
-  3: 'Red Wins',
-  4: 'Blue Wins'
-};
-
-/***/ }),
 
 /***/ "./database.js":
 /*!*********************!*\
@@ -166,14 +147,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _database__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../database */ "./database.js");
 /* harmony import */ var _words_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../words.json */ "./words.json");
 var _words_json__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../../words.json */ "./words.json", 1);
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../constants */ "./constants.js");
-
 
 
 
 
 const handler = next_connect__WEBPACK_IMPORTED_MODULE_0___default()();
-handler.use(_database__WEBPACK_IMPORTED_MODULE_2__["default"]);
+handler.use(_database__WEBPACK_IMPORTED_MODULE_2__["default"]); // Find a game with token
+
 handler.get(async (req, res) => {
   const {
     token
@@ -188,17 +168,15 @@ handler.get(async (req, res) => {
     res.status(500).send();
     throw new Error(`Error loadin game with token: ${token}: ${err}`);
   }
-});
+}); // Create new game
+
 handler.post(async (req, res) => {
   const {
     token,
-    officialWords,
-    green
+    officialWords
   } = req.body;
 
-  const randomInt = (min, max) => {
-    return Math.round(min + Math.random() * (max - min));
-  };
+  const randomInt = (min, max) => Math.round(min + Math.random() * (max - min));
 
   const doNotInclude = {};
 
@@ -215,7 +193,7 @@ handler.post(async (req, res) => {
     return word;
   };
 
-  const firstPlayer = req.query.firstPlayer || Math.random() >= 0.5 ? 1 : 2;
+  const gameStatus = Math.random() >= 0.5 ? 1 : 2;
   const boardMap = [];
 
   for (let i = 0; i < 5; i++) {
@@ -248,37 +226,22 @@ handler.post(async (req, res) => {
     boardMap[x][y].team = int;
   };
 
-  if (!green) {
-    for (let i = 0; i < 9; i++) {
-      addCardOwner(firstPlayer === 1 ? 1 : 2);
+  for (let i = 0; i < 9; i++) {
+    addCardOwner(gameStatus === 1 ? 1 : 2);
 
-      if (i !== 0) {
-        addCardOwner(firstPlayer === 1 ? 2 : 1);
-      }
-    }
-  }
-
-  if (green) {
-    for (let i = 0; i < 7; i++) {
-      addCardOwner(4);
+    if (i !== 0) {
+      addCardOwner(gameStatus === 1 ? 2 : 1);
     }
   }
 
   addCardOwner(3);
-
-  if (green) {
-    addCardOwner(3);
-    addCardOwner(3);
-  }
-
   const game = {
     token,
     boardMap,
     scoreBoard: {
-      blue: firstPlayer === 1 ? 9 : 8,
-      red: firstPlayer === 2 ? 9 : 8,
-      gameStatus: firstPlayer === 1 ? 1 : 2,
-      green
+      blue: gameStatus === 1 ? 9 : 8,
+      red: gameStatus === 2 ? 9 : 8,
+      gameStatus: gameStatus === 1 ? 1 : 2
     },
     players: {
       blue: [],
@@ -293,7 +256,8 @@ handler.post(async (req, res) => {
     res.status(500).send();
     throw new Error(`Error adding new game: ${err}`);
   }
-});
+}); // Update game
+
 handler.put(async (req, res) => {
   const {
     x,
@@ -373,7 +337,7 @@ module.exports = JSON.parse("{\"list\":[\"Hollywood\",\"Screen\",\"Play\",\"Marb
 
 /***/ }),
 
-/***/ 4:
+/***/ 6:
 /*!**********************************!*\
   !*** multi ./pages/api/games.js ***!
   \**********************************/

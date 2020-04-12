@@ -1,13 +1,14 @@
 export default function Loader() {
   return (
-    <div className="lds-ring"><
-      div></div><div></div><div></div><div></div>
+    <div className="lds-ring">
+      <div></div><div></div><div></div><div>
+      </div>
       <style>{`
       .lds-ring {
         display: inline-block;
         position: relative;
         width: 80px;
-        height: 80px;
+        height: 80vh;
       }
       .lds-ring div {
         box-sizing: border-box;

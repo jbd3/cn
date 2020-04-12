@@ -2,12 +2,12 @@ import nextConnect from 'next-connect';
 import randomWords from 'random-words';
 import middleware from '../../database';
 import words from '../../words.json';
-import { gameStatusToString } from '../../constants';
 
 const handler = nextConnect();
 
 handler.use(middleware);
 
+// Find a game with token
 handler.get(async (req, res) => {
   const { token } = req.query;
   try {
@@ -19,11 +19,10 @@ handler.get(async (req, res) => {
   }
 });
 
+// Create new game
 handler.post(async (req, res) => {
-  const { token, officialWords, green } = req.body;
-  const randomInt = (min, max) => {
-    return Math.round(min + (Math.random() * (max - min)));
-  };
+  const { token, officialWords } = req.body;
+  const randomInt = (min, max) => Math.round(min + (Math.random() * (max - min)));
 
   const doNotInclude = {};
   const getWord = ({ isOfficial }) => {
@@ -35,7 +34,7 @@ handler.post(async (req, res) => {
     return word;
   };
 
-  const firstPlayer = req.query.firstPlayer || Math.random() >= 0.5 ? 1 : 2;
+  const gameStatus = Math.random() >= 0.5 ? 1 : 2;
   const boardMap = [];
   for (let i = 0; i < 5; i++) {
     const row = [];
@@ -56,34 +55,23 @@ handler.post(async (req, res) => {
       y = randomInt(0, 4);
     }
     boardMap[x][y].team = int;
+  };
+
+  for (let i = 0; i < 9; i++) {
+    addCardOwner(gameStatus === 1 ? 1 : 2);
+    if (i !== 0) {
+      addCardOwner(gameStatus === 1 ? 2 : 1);
+    }
   }
 
-  if (!green) {
-    for (let i = 0; i < 9; i++) {
-      addCardOwner(firstPlayer === 1 ? 1 : 2);
-      if (i !== 0) {
-        addCardOwner(firstPlayer === 1 ? 2 : 1);
-      }
-    }
-  }
-  if (green) {
-    for (let i = 0; i < 7; i++) {
-      addCardOwner(4);
-    }
-  }
   addCardOwner(3);
-  if (green) {
-    addCardOwner(3);
-    addCardOwner(3);
-  }
   const game = {
     token,
     boardMap,
     scoreBoard: {
-      blue: firstPlayer === 1 ? 9 : 8,
-      red: firstPlayer === 2 ? 9 : 8,
-      gameStatus: firstPlayer === 1 ? 1 : 2,
-      green,
+      blue: gameStatus === 1 ? 9 : 8,
+      red: gameStatus === 2 ? 9 : 8,
+      gameStatus: gameStatus === 1 ? 1 : 2,
     },
     players: {
       blue: [],
@@ -94,11 +82,12 @@ handler.post(async (req, res) => {
     await req.db.collection('games').insertOne(game);
     res.json(token);
   } catch (err) {
-    res.status(500).send()
+    res.status(500).send();
     throw new Error(`Error adding new game: ${err}`);
   }
 });
 
+// Update game
 handler.put(async (req, res) => {
   const { x, y, token } = req.body;
   try {
@@ -130,7 +119,7 @@ handler.put(async (req, res) => {
     await req.db.collection('games').findOneAndUpdate({ token }, { $set: { boardMap, scoreBoard } }, { returnOriginal: false });
     res.send(200);
   } catch (err) {
-    res.status(500).send()
+    res.status(500).send();
     throw new Error(`Error on guess: ${err}`);
   }
 });
