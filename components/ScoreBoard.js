@@ -58,6 +58,8 @@ export default function ScoreBoard({ cardsRemaining, scoreBoard }) {
         color: white;
         font-weight: 600;
         margin: 0 auto;
+        justify-self: center;
+        align-self: center;
       }
       .team {
         display: flex;
