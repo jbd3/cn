@@ -130,7 +130,6 @@ handler.put(async (req, res) => {
         }
       }
     }
-    await req.db.collection('games').deleteMany();
     await req.db.collection('games').findOneAndUpdate({ token }, { $set: { boardMap, scoreBoard } }, { returnOriginal: false });
     res.send(200);
   } catch (err) {
