@@ -1,4 +1,4 @@
-import Nav from './Nav';
+import Link from 'next/link'
 import NewGameButton from './NewGameButton';
 
 export default function Layout({ children }) {
@@ -6,6 +6,9 @@ export default function Layout({ children }) {
     <main className="layout">
       <header>
         <div className="topButton">
+          <Link href='/'>
+            HOME
+          </Link>
           <NewGameButton solid={false} />
         </div>
       </header>
