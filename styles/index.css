@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  background: #9a3246;
+}
+
+.btn-teal {
+  @apply flex-shrink-0 bg-teal-500 border-teal-500 text-sm border-4 text-white py-1 px-2 rounded;
+}
+
+.btn-teal:hover {
+  @apply border-teal-700 bg-teal-700
+}
+
+.btn {
+  @apply font-bold py-2 px-4 rounded;
+}
+.btn-blue {
+  @apply bg-blue-500 text-white;
+}
+.btn-blue:hover {
+  @apply bg-blue-700;
+}
+/* .sideBar {
+  @apply w-full lg:w-1/4 bg-gray-500;
+}
+.mainColumn {
+  @apply w-full lg:w-3/4 bg-gray-600;
+} */
