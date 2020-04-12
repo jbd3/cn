@@ -1,0 +1,91 @@
+import { gameStatusToString } from '../constants';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons'
+
+export default function ScoreBoard({ cardsRemaining, scoreBoard }) {
+  console.log('faAngleDoubleRight: ', faAngleDoubleRight);
+  console.log('cardsRemaining: ', cardsRemaining);
+  console.log('scoreBoard: ', scoreBoard);
+  const { gameStatus } = scoreBoard;
+  return (<>
+    {gameStatus > 2
+      ? (
+        <div className="score-board">
+          <div className="final">{gameStatusToString[gameStatus] + '!'}</div>
+        </div>
+      ) : (
+        <div className="score-board">
+          <div className="team">
+            <div className="arrow">
+              {gameStatus === 1 && (<div>TURN ARROW <FontAwesomeIcon icon={faAngleDoubleRight} /></div>)}
+            </div>
+            <div className="color-box red">
+              {`${cardsRemaining.red}`}
+            </div>
+            <div className="cards-remaining">
+              CARDS REMAINING
+              </div>
+          </div>
+          <div className="team">
+            <div className="arrow">
+              {gameStatus === 2 && (<div>TURN ARROW <FontAwesomeIcon icon={faAngleDoubleRight} /></div>)}
+            </div>
+            <div className="color-box blue">
+              {`${cardsRemaining.blue}`}
+            </div>
+            <div className="cards-remaining">
+              CARDS REMAINING
+              </div>
+          </div>
+        </div>)
+    }
+    <style> {`
+      .score-board {
+        display: flex;
+        flex-direction: column;
+        width: 450px;
+        align-self: center;
+        color: white;
+        font-weight: 600;
+      }
+      .team {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 5px;
+      }
+      .arrow {
+        flex-basis: 40%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      }
+      .color-box {
+        flex-basis: 10%;
+        text-align: center;
+        padding: 5px; 2px;
+        margin: 0 10px;
+        border-radius: 5px;
+      }
+      .blue {
+        background: #0D659E;
+        border: 4px solid #005487;
+      }
+      .red {
+        background: #E03222;
+        border: 4px solid #CA0A05;
+      }
+      .final {
+        flex-basis: 100%;
+        font-size: 40px;
+        white;
+        text-align: center;
+      }
+      .cards-remaining {
+        flex-basis: 60%;
+        display: flex;
+        align-items: center;
+      }
+    `}</style >
+  </>
+  )
+}
