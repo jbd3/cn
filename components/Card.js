@@ -22,6 +22,9 @@ export default function Card({ card, isCodeMaster, rowIndex, columnIndex, reveal
       case 3:
         cardImage = '/deathtint.png'
         break;
+      case 4:
+        cardImage = '/greentint.png'
+        break;
       default:
         cardImage = '/card.png'
     }
@@ -39,6 +42,9 @@ export default function Card({ card, isCodeMaster, rowIndex, columnIndex, reveal
         break;
       case 3:
         cardImage = '/death.png'
+        break;
+      case 4:
+        cardImage = '/green.png'
         break;
       default:
         cardImage = '/card.png'

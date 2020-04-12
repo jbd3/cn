@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -97,17 +97,31 @@ module.exports =
 /*!**********************!*\
   !*** ./constants.js ***!
   \**********************/
-/*! exports provided: gameStatusToString */
+/*! exports provided: gameStatusToString, cardTeamToString */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "gameStatusToString", function() { return gameStatusToString; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cardTeamToString", function() { return cardTeamToString; });
 const gameStatusToString = {
   1: "Red's turn",
   2: "Blue's turn",
   3: 'Red Wins',
-  4: 'Blue Wins'
+  4: 'Blue Wins',
+  5: 'Your Turn',
+  // Green
+  6: 'You Win',
+  // Green
+  7: 'You Lose' // Green
+
+};
+const cardTeamToString = {
+  0: 'neutral',
+  1: 'red',
+  2: 'blue',
+  3: 'death',
+  4: 'green'
 };
 
 /***/ }),
@@ -196,9 +210,7 @@ handler.post(async (req, res) => {
     green
   } = req.body;
 
-  const randomInt = (min, max) => {
-    return Math.round(min + Math.random() * (max - min));
-  };
+  const randomInt = (min, max) => Math.round(min + Math.random() * (max - min));
 
   const doNotInclude = {};
 
@@ -215,7 +227,9 @@ handler.post(async (req, res) => {
     return word;
   };
 
-  const firstPlayer = req.query.firstPlayer || Math.random() >= 0.5 ? 1 : 2;
+  let gameStatus = 5;
+  if (!green) gameStatus = req.query.firstPlayer || Math.random() >= 0.5 ? 1 : 2; // Fill the board with neutral cards
+
   const boardMap = [];
 
   for (let i = 0; i < 5; i++) {
@@ -250,10 +264,10 @@ handler.post(async (req, res) => {
 
   if (!green) {
     for (let i = 0; i < 9; i++) {
-      addCardOwner(firstPlayer === 1 ? 1 : 2);
+      addCardOwner(gameStatus === 1 ? 1 : 2);
 
       if (i !== 0) {
-        addCardOwner(firstPlayer === 1 ? 2 : 1);
+        addCardOwner(gameStatus === 1 ? 2 : 1);
       }
     }
   }
@@ -275,10 +289,10 @@ handler.post(async (req, res) => {
     token,
     boardMap,
     scoreBoard: {
-      blue: firstPlayer === 1 ? 9 : 8,
-      red: firstPlayer === 2 ? 9 : 8,
-      gameStatus: firstPlayer === 1 ? 1 : 2,
-      green
+      red: gameStatus === 2 ? 9 : 8,
+      blue: gameStatus === 1 ? 9 : 8,
+      gameStatus,
+      green: green ? 7 : null
     },
     players: {
       blue: [],
@@ -342,6 +356,20 @@ handler.put(async (req, res) => {
       }
     }
 
+    if (gameStatus === 5) {
+      if (team === 3) {
+        scoreBoard.gameStatus = 7;
+      }
+
+      if (team === 4) {
+        scoreBoard.green -= 1;
+
+        if (scoreBoard.green === 0) {
+          scoreBoard.gameStatus = 6;
+        }
+      }
+    }
+
     await req.db.collection('games').findOneAndUpdate({
       token
     }, {
@@ -373,7 +401,7 @@ module.exports = JSON.parse("{\"list\":[\"Hollywood\",\"Screen\",\"Play\",\"Marb
 
 /***/ }),
 
-/***/ 4:
+/***/ 5:
 /*!**********************************!*\
   !*** multi ./pages/api/games.js ***!
   \**********************************/

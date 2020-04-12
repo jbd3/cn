@@ -3,8 +3,8 @@ import randomWords from 'random-words'
 import fetch from 'isomorphic-unfetch'
 import Router from 'next/router'
 
-export default function NewGameButton({ solid, officialWords = true, setIsCodeMaster }) {
-  const newGame = ({ firstPlayer = null }) => {
+export default function NewGameButton({ solid, officialWords = true, setIsCodeMaster = null, isGreenMode = false }) {
+  const newGame = () => {
     if (setIsCodeMaster) setIsCodeMaster(false);
     const randomInt = (min, max) => {
       return Math.round(min + (Math.random() * (max - min)));
@@ -13,6 +13,7 @@ export default function NewGameButton({ solid, officialWords = true, setIsCodeMa
     const body = JSON.stringify({
       token,
       officialWords,
+      green: isGreenMode,
     })
     Router.push(`/game?token=${token}`);
     fetch('/api/games', {

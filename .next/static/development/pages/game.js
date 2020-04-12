@@ -163,7 +163,8 @@ function Index() {
 
   var cardsRemaining = {
     red: 0,
-    blue: 0
+    blue: 0,
+    green: 0
   };
 
   if (Array.isArray(boardMap)) {
@@ -176,6 +177,10 @@ function Index() {
         if (card.team === 2 && !card.isRevealed) {
           cardsRemaining.blue++;
         }
+
+        if (card.team === 4 && !card.isRevealed) {
+          cardsRemaining.green++;
+        }
       });
     });
   }
@@ -184,14 +189,14 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70,
+      lineNumber: 74,
       columnNumber: 5
     }
   }, __jsx("header", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71,
+      lineNumber: 75,
       columnNumber: 7
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
@@ -199,7 +204,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72,
+      lineNumber: 76,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -207,14 +212,14 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73,
+      lineNumber: 77,
       columnNumber: 11
     }
   }, "HOME")), __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77,
+      lineNumber: 81,
       columnNumber: 9
     }
   }, __jsx(_NewGameButton__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -223,7 +228,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78,
+      lineNumber: 82,
       columnNumber: 11
     }
   }))), __jsx("div", {
@@ -231,7 +236,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81,
+      lineNumber: 85,
       columnNumber: 7
     }
   }, "CODENAMES"), loading && __jsx("div", {
@@ -239,14 +244,14 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83,
+      lineNumber: 87,
       columnNumber: 9
     }
   }, __jsx(_Loader__WEBPACK_IMPORTED_MODULE_9__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84,
+      lineNumber: 88,
       columnNumber: 11
     }
   })), boardMap && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("div", {
@@ -257,7 +262,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88,
+      lineNumber: 92,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -265,7 +270,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89,
+      lineNumber: 93,
       columnNumber: 11
     }
   }, __jsx("div", {
@@ -273,7 +278,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90,
+      lineNumber: 94,
       columnNumber: 13
     }
   }, __jsx("input", {
@@ -284,7 +289,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91,
+      lineNumber: 95,
       columnNumber: 15
     }
   }), __jsx("button", {
@@ -293,7 +298,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92,
+      lineNumber: 96,
       columnNumber: 15
     }
   }, "Copy Link")))), __jsx("div", {
@@ -301,7 +306,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 98,
+      lineNumber: 102,
       columnNumber: 9
     }
   }, __jsx(_components_Toggle__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -313,7 +318,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99,
+      lineNumber: 103,
       columnNumber: 11
     }
   })), __jsx(_components_ScoreBoard__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -322,7 +327,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101,
+      lineNumber: 105,
       columnNumber: 9
     }
   }), __jsx(_Board__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -332,14 +337,14 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102,
+      lineNumber: 106,
       columnNumber: 9
     }
   })), __jsx("style", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104,
+      lineNumber: 108,
       columnNumber: 7
     }
   }, "\n        .game-title {\n          font-family: futura;\n          font-size: 45px;\n          margin-top: 20px;\n          align-self: center;\n          color: white;\n        }\n        .scoreBoard {\n          display: flex;\n          align-content: space-between;\n          align-self: center;\n          border: 1px solid white;\n          border-radius: 5px;\n          padding: 10px;\n          color: white;\n          font-weight: 500;\n        }\n        .score {\n          margin: 0 10px;\n          color: white;\n        }\n        main {\n          width: 100%;\n          display: flex;\n          flex-direction: column;\n          justify-content: center;\n        }\n        .loader-container {\n          justify-self: center;\n          align-self: center;\n        }\n        .toggleContainer {\n          width: 160px;\n          align-self: center;\n          margin: 20px 0;\n        }\n        .link-container {\n          width: 98vw;\n          max-width: 400px;\n          align-self: center;\n          font-size: 20px;\n          margin: 20px 0;\n        }\n      "));
@@ -403,6 +408,10 @@ function Card(_ref) {
         cardImage = '/deathtint.png';
         break;
 
+      case 4:
+        cardImage = '/greentint.png';
+        break;
+
       default:
         cardImage = '/card.png';
     }
@@ -424,6 +433,10 @@ function Card(_ref) {
 
       case 3:
         cardImage = '/death.png';
+        break;
+
+      case 4:
+        cardImage = '/green.png';
         break;
 
       default:
@@ -448,7 +461,7 @@ function Card(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 54,
       columnNumber: 5
     }
   }, __jsx("div", {
@@ -456,7 +469,7 @@ function Card(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
+      lineNumber: 64,
       columnNumber: 7
     }
   }, __jsx("p", {
@@ -464,7 +477,7 @@ function Card(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
+      lineNumber: 65,
       columnNumber: 9
     }
   }, card.word)), __jsx("div", {
@@ -472,7 +485,7 @@ function Card(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 67,
       columnNumber: 7
     }
   }, __jsx("div", {
@@ -480,14 +493,14 @@ function Card(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62,
+      lineNumber: 68,
       columnNumber: 9
     }
   }, card.word)), __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
     id: "2421387373",
     dynamic: [cardImage, isRevealed || clicked ? 'rgba(0, 0, 0, 0.0)' : '#333435', (isRevealed || clicked) && hover ? 'flex' : 'none'],
     __self: this
-  }, "main.__jsx-style-dynamic-selector{background-image:url(".concat(cardImage, ");background-size:cover;background-repeat:no-repeat;}.card.__jsx-style-dynamic-selector{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-basis:20%;-ms-flex-preferred-size:20%;flex-basis:20%;text-align:center;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;width:100%;margin:0 2px;cursor:pointer;}.word.__jsx-style-dynamic-selector{-webkit-align-self:center;-ms-flex-item-align:center;align-self:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;position:absolute;padding-top:4%;font-size:10px;font-family:sans-serif;color:").concat(isRevealed || clicked ? 'rgba(0, 0, 0, 0.0)' : '#333435', ";}.tooltip.__jsx-style-dynamic-selector{display:").concat((isRevealed || clicked) && hover ? 'flex' : 'none', ";font-weight:400;font-size:10px;-webkit-align-self:center;-ms-flex-item-align:center;align-self:center;justify-self:center;}.tooltip.__jsx-style-dynamic-selector p.__jsx-style-dynamic-selector{color:white;font-weight:600;text-shadow:1px 1px 3px black;}.word.__jsx-style-dynamic-selector:hover{color:'#333435';}@media screen and (min-width:480px){.word.__jsx-style-dynamic-selector,.tooltip.__jsx-style-dynamic-selector{font-size:15px;}}@media screen and (min-width:720px){.word.__jsx-style-dynamic-selector,.tooltip.__jsx-style-dynamic-selector{font-size:20px;}}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9qYWtlZG91Z2xhcyAxL2RldmVsb3BtZW50L25leHRKcy9jbi9jb21wb25lbnRzL0NhcmQuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBK0RrQixBQUc4RCxBQUt0QyxBQVVLLEFBU21CLEFBT3pCLEFBS0ksQUFJQyxBQUtBLFlBYkQsR0FTaEIsQUFLQSxDQVRGLFlBSmdDLFNBUmQsY0F4Qk0sRUF5QlAsS0FRakIsVUFQb0IsR0FYSyxFQWRLLENBSWIsMkJBSGpCLHNDQXlCc0IsQ0FyQkYsa0JBQ0csQ0FxQnZCLFdBWm9CLGtCQUNILGVBQ0EsZUFDUSxnQkFYQSxPQVlZLG1DQUNyQyx5REFaYSxXQUNFLGFBQ0UsZUFDakIiLCJmaWxlIjoiL1VzZXJzL2pha2Vkb3VnbGFzIDEvZGV2ZWxvcG1lbnQvbmV4dEpzL2NuL2NvbXBvbmVudHMvQ2FyZC5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IHVzZVN0YXRlIH0gZnJvbSAncmVhY3QnO1xuXG5leHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBDYXJkKHsgY2FyZCwgaXNDb2RlTWFzdGVyLCByb3dJbmRleCwgY29sdW1uSW5kZXgsIHJldmVhbENhcmQgfSkge1xuXG4gIGNvbnN0IFtjbGlja2VkLCB1cGRhdGVDbGlja2VkXSA9IHVzZVN0YXRlKGZhbHNlKTtcbiAgY29uc3QgW2hvdmVyLCBzZXRIb3Zlcl0gPSB1c2VTdGF0ZShmYWxzZSk7XG5cbiAgY29uc3QgeyBpc1JldmVhbGVkIH0gPSBjYXJkO1xuICBjb25zdCB7IHRlYW0gfSA9IGNhcmQ7XG4gIGxldCBjYXJkSW1hZ2UgPSAnL2NhcmQucG5nJztcbiAgaWYgKGlzQ29kZU1hc3Rlcikge1xuICAgIHN3aXRjaCAodGVhbSkge1xuICAgICAgY2FzZSAwOlxuICAgICAgICBjYXJkSW1hZ2UgPSAnL2NhcmQucG5nJztcbiAgICAgICAgYnJlYWs7XG4gICAgICBjYXNlIDE6XG4gICAgICAgIGNhcmRJbWFnZSA9ICcvcmVkdGludC5wbmcnXG4gICAgICAgIGJyZWFrO1xuICAgICAgY2FzZSAyOlxuICAgICAgICBjYXJkSW1hZ2UgPSAnL2JsdWV0aW50LnBuZydcbiAgICAgICAgYnJlYWs7XG4gICAgICBjYXNlIDM6XG4gICAgICAgIGNhcmRJbWFnZSA9ICcvZGVhdGh0aW50LnBuZydcbiAgICAgICAgYnJlYWs7XG4gICAgICBkZWZhdWx0OlxuICAgICAgICBjYXJkSW1hZ2UgPSAnL2NhcmQucG5nJ1xuICAgIH1cbiAgfVxuICBpZiAoaXNSZXZlYWxlZCB8fCBjbGlja2VkKSB7XG4gICAgc3dpdGNoICh0ZWFtKSB7XG4gICAgICBjYXNlIDA6XG4gICAgICAgIGNhcmRJbWFnZSA9ICcvbmV1dHJhbC5wbmcnO1xuICAgICAgICBicmVhaztcbiAgICAgIGNhc2UgMTpcbiAgICAgICAgY2FyZEltYWdlID0gJy9yZWQucG5nJ1xuICAgICAgICBicmVhaztcbiAgICAgIGNhc2UgMjpcbiAgICAgICAgY2FyZEltYWdlID0gJy9ibHVlLnBuZydcbiAgICAgICAgYnJlYWs7XG4gICAgICBjYXNlIDM6XG4gICAgICAgIGNhcmRJbWFnZSA9ICcvZGVhdGgucG5nJ1xuICAgICAgICBicmVhaztcbiAgICAgIGRlZmF1bHQ6XG4gICAgICAgIGNhcmRJbWFnZSA9ICcvY2FyZC5wbmcnXG4gICAgfVxuICB9XG4gIHJldHVybiAoXG4gICAgPG1haW5cbiAgICAgIG9uQ2xpY2s9eygpID0+IHtcbiAgICAgICAgaWYgKCFjYXJkLmlzUmV2ZWFsZWQgJiYgIWlzQ29kZU1hc3Rlcikge1xuICAgICAgICAgIHJldmVhbENhcmQocm93SW5kZXgsIGNvbHVtbkluZGV4LCBjYXJkLnRlYW0pXG4gICAgICAgICAgdXBkYXRlQ2xpY2tlZCh0cnVlKTtcbiAgICAgICAgfVxuICAgICAgfX1cbiAgICAgIG9uTW91c2VFbnRlcj17KCkgPT4gc2V0SG92ZXIodHJ1ZSl9XG4gICAgICBvbk1vdXNlTGVhdmU9eygpID0+IHNldEhvdmVyKGZhbHNlKX1cbiAgICA+XG4gICAgICA8ZGl2IGNsYXNzTmFtZT1cInRvb2x0aXBcIiA+XG4gICAgICAgIDxwPntjYXJkLndvcmR9PC9wPlxuICAgICAgPC9kaXY+XG4gICAgICA8ZGl2IGNsYXNzTmFtZT1cImNhcmRcIj5cbiAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJ3b3JkXCIgPntjYXJkLndvcmR9PC9kaXY+XG4gICAgICA8L2Rpdj5cbiAgICAgIDxzdHlsZSBqc3g+e2BcbiAgICAgICAgbWFpbiB7XG4gICAgICAgICAgYmFja2dyb3VuZC1pbWFnZTogdXJsKCR7Y2FyZEltYWdlfSk7XG4gICAgICAgICAgYmFja2dyb3VuZC1zaXplOiBjb3ZlcjtcbiAgICAgICAgICBiYWNrZ3JvdW5kLXJlcGVhdDogbm8tcmVwZWF0O1xuICAgICAgICB9XG4gICAgICAgIC5jYXJkIHtcbiAgICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICAgIGZsZXgtYmFzaXM6IDIwJTtcbiAgICAgICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gICAgICAgICAgYWxpZ24tY29udGVudDogY2VudGVyO1xuICAgICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICAgICAgICAgIHdpZHRoOiAxMDAlO1xuICAgICAgICAgIG1hcmdpbjogMCAycHg7XG4gICAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xuICAgICAgICB9XG4gICAgICAgIC53b3JkIHtcbiAgICAgICAgICBhbGlnbi1zZWxmOiBjZW50ZXI7XG4gICAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgICAgICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgICAgICAgIHBhZGRpbmctdG9wOiA0JTtcbiAgICAgICAgICBmb250LXNpemU6IDEwcHg7XG4gICAgICAgICAgZm9udC1mYW1pbHk6IHNhbnMtc2VyaWY7XG4gICAgICAgICAgY29sb3I6ICR7aXNSZXZlYWxlZCB8fCBjbGlja2VkID8gJ3JnYmEoMCwgMCwgMCwgMC4wKScgOiAnIzMzMzQzNSd9O1xuICAgICAgICB9XG4gICAgICAgIC50b29sdGlwIHtcbiAgICAgICAgICBkaXNwbGF5OiAkeyhpc1JldmVhbGVkIHx8IGNsaWNrZWQpICYmIGhvdmVyID8gJ2ZsZXgnIDogJ25vbmUnfTtcbiAgICAgICAgICBmb250LXdlaWdodDogNDAwO1xuICAgICAgICAgIGZvbnQtc2l6ZTogMTBweDtcbiAgICAgICAgICBhbGlnbi1zZWxmOiBjZW50ZXI7XG4gICAgICAgICAganVzdGlmeS1zZWxmOiBjZW50ZXI7XG4gICAgICAgIH1cbiAgICAgICAgLnRvb2x0aXAgcCB7XG4gICAgICAgICAgY29sb3I6IHdoaXRlO1xuICAgICAgICAgIGZvbnQtd2VpZ2h0OiA2MDA7XG4gICAgICAgICAgdGV4dC1zaGFkb3c6IDFweCAxcHggM3B4IGJsYWNrO1xuICAgICAgICB9XG4gICAgICAgIC53b3JkOmhvdmVyIHtcbiAgICAgICAgICBjb2xvcjogJyMzMzM0MzUnO1xuICAgICAgICB9XG4gICAgICAgIEBtZWRpYSBzY3JlZW4gYW5kIChtaW4td2lkdGg6IDQ4MHB4KSB7XG4gICAgICAgICAgLndvcmQsIC50b29sdGlwIHtcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogMTVweDtcbiAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICAgICAgQG1lZGlhIHNjcmVlbiBhbmQgKG1pbi13aWR0aDogNzIwcHgpIHtcbiAgICAgICAgICAud29yZCwgLnRvb2x0aXAge1xuICAgICAgICAgICAgZm9udC1zaXplOiAyMHB4O1xuICAgICAgICAgIH1cbiAgICAgICAgfVxuICAgICAgYH08L3N0eWxlPlxuICAgIDwvbWFpbiA+XG4gIClcbn0iXX0= */\n/*@ sourceURL=/Users/jakedouglas 1/development/nextJs/cn/components/Card.js */")));
+  }, "main.__jsx-style-dynamic-selector{background-image:url(".concat(cardImage, ");background-size:cover;background-repeat:no-repeat;}.card.__jsx-style-dynamic-selector{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-basis:20%;-ms-flex-preferred-size:20%;flex-basis:20%;text-align:center;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;width:100%;margin:0 2px;cursor:pointer;}.word.__jsx-style-dynamic-selector{-webkit-align-self:center;-ms-flex-item-align:center;align-self:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;position:absolute;padding-top:4%;font-size:10px;font-family:sans-serif;color:").concat(isRevealed || clicked ? 'rgba(0, 0, 0, 0.0)' : '#333435', ";}.tooltip.__jsx-style-dynamic-selector{display:").concat((isRevealed || clicked) && hover ? 'flex' : 'none', ";font-weight:400;font-size:10px;-webkit-align-self:center;-ms-flex-item-align:center;align-self:center;justify-self:center;}.tooltip.__jsx-style-dynamic-selector p.__jsx-style-dynamic-selector{color:white;font-weight:600;text-shadow:1px 1px 3px black;}.word.__jsx-style-dynamic-selector:hover{color:'#333435';}@media screen and (min-width:480px){.word.__jsx-style-dynamic-selector,.tooltip.__jsx-style-dynamic-selector{font-size:15px;}}@media screen and (min-width:720px){.word.__jsx-style-dynamic-selector,.tooltip.__jsx-style-dynamic-selector{font-size:20px;}}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9qYWtlZG91Z2xhcyAxL2RldmVsb3BtZW50L25leHRKcy9jbi9jb21wb25lbnRzL0NhcmQuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBcUVrQixBQUc4RCxBQUt0QyxBQVVLLEFBU21CLEFBT3pCLEFBS0ksQUFJQyxBQUtBLFlBYkQsR0FTaEIsQUFLQSxDQVRGLFlBSmdDLFNBUmQsY0F4Qk0sRUF5QlAsS0FRakIsVUFQb0IsR0FYSyxFQWRLLENBSWIsMkJBSGpCLHNDQXlCc0IsQ0FyQkYsa0JBQ0csQ0FxQnZCLFdBWm9CLGtCQUNILGVBQ0EsZUFDUSxnQkFYQSxPQVlZLG1DQUNyQyx5REFaYSxXQUNFLGFBQ0UsZUFDakIiLCJmaWxlIjoiL1VzZXJzL2pha2Vkb3VnbGFzIDEvZGV2ZWxvcG1lbnQvbmV4dEpzL2NuL2NvbXBvbmVudHMvQ2FyZC5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IHVzZVN0YXRlIH0gZnJvbSAncmVhY3QnO1xuXG5leHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBDYXJkKHsgY2FyZCwgaXNDb2RlTWFzdGVyLCByb3dJbmRleCwgY29sdW1uSW5kZXgsIHJldmVhbENhcmQgfSkge1xuXG4gIGNvbnN0IFtjbGlja2VkLCB1cGRhdGVDbGlja2VkXSA9IHVzZVN0YXRlKGZhbHNlKTtcbiAgY29uc3QgW2hvdmVyLCBzZXRIb3Zlcl0gPSB1c2VTdGF0ZShmYWxzZSk7XG5cbiAgY29uc3QgeyBpc1JldmVhbGVkIH0gPSBjYXJkO1xuICBjb25zdCB7IHRlYW0gfSA9IGNhcmQ7XG4gIGxldCBjYXJkSW1hZ2UgPSAnL2NhcmQucG5nJztcbiAgaWYgKGlzQ29kZU1hc3Rlcikge1xuICAgIHN3aXRjaCAodGVhbSkge1xuICAgICAgY2FzZSAwOlxuICAgICAgICBjYXJkSW1hZ2UgPSAnL2NhcmQucG5nJztcbiAgICAgICAgYnJlYWs7XG4gICAgICBjYXNlIDE6XG4gICAgICAgIGNhcmRJbWFnZSA9ICcvcmVkdGludC5wbmcnXG4gICAgICAgIGJyZWFrO1xuICAgICAgY2FzZSAyOlxuICAgICAgICBjYXJkSW1hZ2UgPSAnL2JsdWV0aW50LnBuZydcbiAgICAgICAgYnJlYWs7XG4gICAgICBjYXNlIDM6XG4gICAgICAgIGNhcmRJbWFnZSA9ICcvZGVhdGh0aW50LnBuZydcbiAgICAgICAgYnJlYWs7XG4gICAgICBjYXNlIDQ6XG4gICAgICAgIGNhcmRJbWFnZSA9ICcvZ3JlZW50aW50LnBuZydcbiAgICAgICAgYnJlYWs7XG4gICAgICBkZWZhdWx0OlxuICAgICAgICBjYXJkSW1hZ2UgPSAnL2NhcmQucG5nJ1xuICAgIH1cbiAgfVxuICBpZiAoaXNSZXZlYWxlZCB8fCBjbGlja2VkKSB7XG4gICAgc3dpdGNoICh0ZWFtKSB7XG4gICAgICBjYXNlIDA6XG4gICAgICAgIGNhcmRJbWFnZSA9ICcvbmV1dHJhbC5wbmcnO1xuICAgICAgICBicmVhaztcbiAgICAgIGNhc2UgMTpcbiAgICAgICAgY2FyZEltYWdlID0gJy9yZWQucG5nJ1xuICAgICAgICBicmVhaztcbiAgICAgIGNhc2UgMjpcbiAgICAgICAgY2FyZEltYWdlID0gJy9ibHVlLnBuZydcbiAgICAgICAgYnJlYWs7XG4gICAgICBjYXNlIDM6XG4gICAgICAgIGNhcmRJbWFnZSA9ICcvZGVhdGgucG5nJ1xuICAgICAgICBicmVhaztcbiAgICAgIGNhc2UgNDpcbiAgICAgICAgY2FyZEltYWdlID0gJy9ncmVlbi5wbmcnXG4gICAgICAgIGJyZWFrO1xuICAgICAgZGVmYXVsdDpcbiAgICAgICAgY2FyZEltYWdlID0gJy9jYXJkLnBuZydcbiAgICB9XG4gIH1cbiAgcmV0dXJuIChcbiAgICA8bWFpblxuICAgICAgb25DbGljaz17KCkgPT4ge1xuICAgICAgICBpZiAoIWNhcmQuaXNSZXZlYWxlZCAmJiAhaXNDb2RlTWFzdGVyKSB7XG4gICAgICAgICAgcmV2ZWFsQ2FyZChyb3dJbmRleCwgY29sdW1uSW5kZXgsIGNhcmQudGVhbSlcbiAgICAgICAgICB1cGRhdGVDbGlja2VkKHRydWUpO1xuICAgICAgICB9XG4gICAgICB9fVxuICAgICAgb25Nb3VzZUVudGVyPXsoKSA9PiBzZXRIb3Zlcih0cnVlKX1cbiAgICAgIG9uTW91c2VMZWF2ZT17KCkgPT4gc2V0SG92ZXIoZmFsc2UpfVxuICAgID5cbiAgICAgIDxkaXYgY2xhc3NOYW1lPVwidG9vbHRpcFwiID5cbiAgICAgICAgPHA+e2NhcmQud29yZH08L3A+XG4gICAgICA8L2Rpdj5cbiAgICAgIDxkaXYgY2xhc3NOYW1lPVwiY2FyZFwiPlxuICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cIndvcmRcIiA+e2NhcmQud29yZH08L2Rpdj5cbiAgICAgIDwvZGl2PlxuICAgICAgPHN0eWxlIGpzeD57YFxuICAgICAgICBtYWluIHtcbiAgICAgICAgICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoJHtjYXJkSW1hZ2V9KTtcbiAgICAgICAgICBiYWNrZ3JvdW5kLXNpemU6IGNvdmVyO1xuICAgICAgICAgIGJhY2tncm91bmQtcmVwZWF0OiBuby1yZXBlYXQ7XG4gICAgICAgIH1cbiAgICAgICAgLmNhcmQge1xuICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgICAgZmxleC1iYXNpczogMjAlO1xuICAgICAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICAgICAgICBhbGlnbi1jb250ZW50OiBjZW50ZXI7XG4gICAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICAgICAgbWFyZ2luOiAwIDJweDtcbiAgICAgICAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgICAgIH1cbiAgICAgICAgLndvcmQge1xuICAgICAgICAgIGFsaWduLXNlbGY6IGNlbnRlcjtcbiAgICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgICAgICAgcGFkZGluZy10b3A6IDQlO1xuICAgICAgICAgIGZvbnQtc2l6ZTogMTBweDtcbiAgICAgICAgICBmb250LWZhbWlseTogc2Fucy1zZXJpZjtcbiAgICAgICAgICBjb2xvcjogJHtpc1JldmVhbGVkIHx8IGNsaWNrZWQgPyAncmdiYSgwLCAwLCAwLCAwLjApJyA6ICcjMzMzNDM1J307XG4gICAgICAgIH1cbiAgICAgICAgLnRvb2x0aXAge1xuICAgICAgICAgIGRpc3BsYXk6ICR7KGlzUmV2ZWFsZWQgfHwgY2xpY2tlZCkgJiYgaG92ZXIgPyAnZmxleCcgOiAnbm9uZSd9O1xuICAgICAgICAgIGZvbnQtd2VpZ2h0OiA0MDA7XG4gICAgICAgICAgZm9udC1zaXplOiAxMHB4O1xuICAgICAgICAgIGFsaWduLXNlbGY6IGNlbnRlcjtcbiAgICAgICAgICBqdXN0aWZ5LXNlbGY6IGNlbnRlcjtcbiAgICAgICAgfVxuICAgICAgICAudG9vbHRpcCBwIHtcbiAgICAgICAgICBjb2xvcjogd2hpdGU7XG4gICAgICAgICAgZm9udC13ZWlnaHQ6IDYwMDtcbiAgICAgICAgICB0ZXh0LXNoYWRvdzogMXB4IDFweCAzcHggYmxhY2s7XG4gICAgICAgIH1cbiAgICAgICAgLndvcmQ6aG92ZXIge1xuICAgICAgICAgIGNvbG9yOiAnIzMzMzQzNSc7XG4gICAgICAgIH1cbiAgICAgICAgQG1lZGlhIHNjcmVlbiBhbmQgKG1pbi13aWR0aDogNDgwcHgpIHtcbiAgICAgICAgICAud29yZCwgLnRvb2x0aXAge1xuICAgICAgICAgICAgZm9udC1zaXplOiAxNXB4O1xuICAgICAgICAgIH1cbiAgICAgICAgfVxuICAgICAgICBAbWVkaWEgc2NyZWVuIGFuZCAobWluLXdpZHRoOiA3MjBweCkge1xuICAgICAgICAgIC53b3JkLCAudG9vbHRpcCB7XG4gICAgICAgICAgICBmb250LXNpemU6IDIwcHg7XG4gICAgICAgICAgfVxuICAgICAgICB9XG4gICAgICBgfTwvc3R5bGU+XG4gICAgPC9tYWluID5cbiAgKVxufSJdfQ== */\n/*@ sourceURL=/Users/jakedouglas 1/development/nextJs/cn/components/Card.js */")));
 }
 
 /***/ }),
@@ -635,11 +648,12 @@ function NewGameButton(_ref) {
   var solid = _ref.solid,
       _ref$officialWords = _ref.officialWords,
       officialWords = _ref$officialWords === void 0 ? true : _ref$officialWords,
-      setIsCodeMaster = _ref.setIsCodeMaster;
+      _ref$setIsCodeMaster = _ref.setIsCodeMaster,
+      setIsCodeMaster = _ref$setIsCodeMaster === void 0 ? null : _ref$setIsCodeMaster,
+      _ref$isGreenMode = _ref.isGreenMode,
+      isGreenMode = _ref$isGreenMode === void 0 ? false : _ref$isGreenMode;
 
-  var newGame = function newGame(_ref2) {
-    var _ref2$firstPlayer = _ref2.firstPlayer,
-        firstPlayer = _ref2$firstPlayer === void 0 ? null : _ref2$firstPlayer;
+  var newGame = function newGame() {
     if (setIsCodeMaster) setIsCodeMaster(false);
 
     var randomInt = function randomInt(min, max) {
@@ -649,7 +663,8 @@ function NewGameButton(_ref) {
     var token = "".concat(random_words__WEBPACK_IMPORTED_MODULE_1___default()(), "-").concat(random_words__WEBPACK_IMPORTED_MODULE_1___default()(), "-").concat(randomInt(100, 999));
     var body = JSON.stringify({
       token: token,
-      officialWords: officialWords
+      officialWords: officialWords,
+      green: isGreenMode
     });
     next_router__WEBPACK_IMPORTED_MODULE_3___default.a.push("/game?token=".concat(token));
     isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_2___default()('/api/games', {
@@ -672,7 +687,7 @@ function NewGameButton(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30,
+      lineNumber: 31,
       columnNumber: 5
     }
   }, "New Game");
@@ -772,20 +787,44 @@ function ScoreBoard(_ref) {
       lineNumber: 10,
       columnNumber: 9
     }
-  }, __jsx("div", {
+  }, gameStatus !== 5 ? __jsx("div", {
     className: "final",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11,
-      columnNumber: 11
+      lineNumber: 12,
+      columnNumber: 15
     }
-  }, _constants__WEBPACK_IMPORTED_MODULE_1__["gameStatusToString"][gameStatus] + '!')) : __jsx("div", {
-    className: "score-board",
+  }, _constants__WEBPACK_IMPORTED_MODULE_1__["gameStatusToString"][gameStatus] + '!') : __jsx("div", {
+    className: "team green-team",
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 14,
+      columnNumber: 15
+    }
+  }, __jsx("div", {
+    className: "color-box green",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15,
+      columnNumber: 17
+    }
+  }, "".concat(cardsRemaining.green)), __jsx("div", {
+    className: "cards-remaining",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18,
+      columnNumber: 17
+    }
+  }, "CARDS REMAINING"))) : __jsx("div", {
+    className: "score-board",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 26,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -793,7 +832,7 @@ function ScoreBoard(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15,
+      lineNumber: 27,
       columnNumber: 11
     }
   }, __jsx("div", {
@@ -801,14 +840,14 @@ function ScoreBoard(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16,
+      lineNumber: 28,
       columnNumber: 13
     }
   }, gameStatus === 1 && __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17,
+      lineNumber: 29,
       columnNumber: 37
     }
   }, "Red's Turn  ", __jsx(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__["FontAwesomeIcon"], {
@@ -816,7 +855,7 @@ function ScoreBoard(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17,
+      lineNumber: 29,
       columnNumber: 54
     }
   }))), __jsx("div", {
@@ -824,7 +863,7 @@ function ScoreBoard(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19,
+      lineNumber: 31,
       columnNumber: 13
     }
   }, "".concat(cardsRemaining.red)), __jsx("div", {
@@ -832,7 +871,7 @@ function ScoreBoard(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22,
+      lineNumber: 34,
       columnNumber: 13
     }
   }, "CARDS REMAINING")), __jsx("div", {
@@ -840,7 +879,7 @@ function ScoreBoard(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26,
+      lineNumber: 38,
       columnNumber: 11
     }
   }, __jsx("div", {
@@ -848,14 +887,14 @@ function ScoreBoard(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27,
+      lineNumber: 39,
       columnNumber: 13
     }
   }, gameStatus === 2 && __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28,
+      lineNumber: 40,
       columnNumber: 37
     }
   }, "Blue's Turn  ", __jsx(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__["FontAwesomeIcon"], {
@@ -863,7 +902,7 @@ function ScoreBoard(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28,
+      lineNumber: 40,
       columnNumber: 55
     }
   }))), __jsx("div", {
@@ -871,7 +910,7 @@ function ScoreBoard(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30,
+      lineNumber: 42,
       columnNumber: 13
     }
   }, "".concat(cardsRemaining.blue)), __jsx("div", {
@@ -879,17 +918,17 @@ function ScoreBoard(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33,
+      lineNumber: 45,
       columnNumber: 13
     }
   }, "CARDS REMAINING"))), __jsx("style", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39,
+      lineNumber: 51,
       columnNumber: 5
     }
-  }, " ", "\n      .score-board {\n        display: flex;\n        flex-direction: column;\n        width: 450px;\n        align-self: center;\n        color: white;\n        font-weight: 600;\n      }\n      .team {\n        display: flex;\n        flex-direction: row;\n        margin-bottom: 5px;\n      }\n      .arrow {\n        flex-basis: 40%;\n        display: flex;\n        font-size: 20px;\n        justify-content: flex-end;\n        align-items: center;\n      }\n      .color-box {\n        flex-basis: 10%;\n        text-align: center;\n        padding: 5px; 2px;\n        margin: 0 10px;\n        border-radius: 5px;\n      }\n      .blue {\n        background: #0D659E;\n        border: 4px solid #005487;\n      }\n      .red {\n        background: #E03222;\n        border: 4px solid #CA0A05;\n      }\n      .final {\n        flex-basis: 100%;\n        font-size: 40px;\n        white;\n        text-align: center;\n      }\n      .cards-remaining {\n        flex-basis: 60%;\n        display: flex;\n        align-items: center;\n      }\n    "));
+  }, " ", "\n      .score-board {\n        display: flex;\n        flex-direction: column;\n        width: 450px;\n        align-self: center;\n        color: white;\n        font-weight: 600;\n      }\n      .team {\n        display: flex;\n        flex-direction: row;\n        margin-bottom: 5px;\n      }\n      .arrow {\n        flex-basis: 40%;\n        display: flex;\n        font-size: 20px;\n        justify-content: flex-end;\n        align-items: center;\n      }\n      .color-box {\n        flex-basis: 10%;\n        text-align: center;\n        padding: 5px; 2px;\n        margin: 0 10px;\n        border-radius: 5px;\n      }\n      .blue {\n        background: #0D659E;\n        border: 4px solid #005487;\n      }\n      .red {\n        background: #E03222;\n        border: 4px solid #CA0A05;\n      }\n      .green {\n        background: #12B142;\n        border: 4px solid #009526;\n      }\n      .final {\n        flex-basis: 100%;\n        font-size: 40px;\n        text-align: center;\n      }\n      .green-status {\n        flex-basis: 100%;\n        font-size: 30px;\n        text-align: center;\n      }\n      .team.green-team {\n        flex-basis: 100%;\n        display: flex;\n        justify-content: center;\n      }\n      .cards-remaining {\n        flex-basis: 60%;\n        display: flex;\n        align-items: center;\n      }\n    "));
 }
 
 /***/ }),
@@ -988,17 +1027,31 @@ function Toggle(_ref) {
 /*!**********************!*\
   !*** ./constants.js ***!
   \**********************/
-/*! exports provided: gameStatusToString */
+/*! exports provided: gameStatusToString, cardTeamToString */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "gameStatusToString", function() { return gameStatusToString; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cardTeamToString", function() { return cardTeamToString; });
 var gameStatusToString = {
   1: "Red's turn",
   2: "Blue's turn",
   3: 'Red Wins',
-  4: 'Blue Wins'
+  4: 'Blue Wins',
+  5: 'Your Turn',
+  // Green
+  6: 'You Win',
+  // Green
+  7: 'You Lose' // Green
+
+};
+var cardTeamToString = {
+  0: 'neutral',
+  1: 'red',
+  2: 'blue',
+  3: 'death',
+  4: 'green'
 };
 
 /***/ }),
@@ -17544,7 +17597,7 @@ function Game() {
 
 /***/ }),
 
-/***/ 3:
+/***/ 2:
 /*!*********************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fgame&absolutePagePath=%2FUsers%2Fjakedouglas%201%2Fdevelopment%2FnextJs%2Fcn%2Fpages%2Fgame.js ***!
   \*********************************************************************************************************************************************/
@@ -17567,5 +17620,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=game.js.map

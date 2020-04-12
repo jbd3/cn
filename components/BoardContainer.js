@@ -52,6 +52,7 @@ export default function Index() {
   const cardsRemaining = {
     red: 0,
     blue: 0,
+    green: 0,
   };
   if (Array.isArray(boardMap)) {
     boardMap.forEach(row => {
@@ -61,6 +62,9 @@ export default function Index() {
         }
         if (card.team === 2 && !card.isRevealed) {
           cardsRemaining.blue++
+        }
+        if (card.team === 4 && !card.isRevealed) {
+          cardsRemaining.green++
         }
       })
     })

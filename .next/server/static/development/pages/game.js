@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -253,7 +253,8 @@ function Index() {
 
   const cardsRemaining = {
     red: 0,
-    blue: 0
+    blue: 0,
+    green: 0
   };
 
   if (Array.isArray(boardMap)) {
@@ -266,6 +267,10 @@ function Index() {
         if (card.team === 2 && !card.isRevealed) {
           cardsRemaining.blue++;
         }
+
+        if (card.team === 4 && !card.isRevealed) {
+          cardsRemaining.green++;
+        }
       });
     });
   }
@@ -274,14 +279,14 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70,
+      lineNumber: 74,
       columnNumber: 5
     }
   }, __jsx("header", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71,
+      lineNumber: 75,
       columnNumber: 7
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
@@ -289,7 +294,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72,
+      lineNumber: 76,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -297,14 +302,14 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73,
+      lineNumber: 77,
       columnNumber: 11
     }
   }, "HOME")), __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77,
+      lineNumber: 81,
       columnNumber: 9
     }
   }, __jsx(_NewGameButton__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -313,7 +318,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78,
+      lineNumber: 82,
       columnNumber: 11
     }
   }))), __jsx("div", {
@@ -321,7 +326,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81,
+      lineNumber: 85,
       columnNumber: 7
     }
   }, "CODENAMES"), loading && __jsx("div", {
@@ -329,14 +334,14 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83,
+      lineNumber: 87,
       columnNumber: 9
     }
   }, __jsx(_Loader__WEBPACK_IMPORTED_MODULE_9__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84,
+      lineNumber: 88,
       columnNumber: 11
     }
   })), boardMap && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("div", {
@@ -345,7 +350,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88,
+      lineNumber: 92,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -353,7 +358,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89,
+      lineNumber: 93,
       columnNumber: 11
     }
   }, __jsx("div", {
@@ -361,7 +366,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90,
+      lineNumber: 94,
       columnNumber: 13
     }
   }, __jsx("input", {
@@ -372,7 +377,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91,
+      lineNumber: 95,
       columnNumber: 15
     }
   }), __jsx("button", {
@@ -381,7 +386,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92,
+      lineNumber: 96,
       columnNumber: 15
     }
   }, "Copy Link")))), __jsx("div", {
@@ -389,7 +394,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 98,
+      lineNumber: 102,
       columnNumber: 9
     }
   }, __jsx(_components_Toggle__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -399,7 +404,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99,
+      lineNumber: 103,
       columnNumber: 11
     }
   })), __jsx(_components_ScoreBoard__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -408,7 +413,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101,
+      lineNumber: 105,
       columnNumber: 9
     }
   }), __jsx(_Board__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -418,14 +423,14 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102,
+      lineNumber: 106,
       columnNumber: 9
     }
   })), __jsx("style", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104,
+      lineNumber: 108,
       columnNumber: 7
     }
   }, `
@@ -537,6 +542,10 @@ function Card({
         cardImage = '/deathtint.png';
         break;
 
+      case 4:
+        cardImage = '/greentint.png';
+        break;
+
       default:
         cardImage = '/card.png';
     }
@@ -560,6 +569,10 @@ function Card({
         cardImage = '/death.png';
         break;
 
+      case 4:
+        cardImage = '/green.png';
+        break;
+
       default:
         cardImage = '/card.png';
     }
@@ -578,7 +591,7 @@ function Card({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 54,
       columnNumber: 5
     }
   }, __jsx("div", {
@@ -586,7 +599,7 @@ function Card({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
+      lineNumber: 64,
       columnNumber: 7
     }
   }, __jsx("p", {
@@ -594,7 +607,7 @@ function Card({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
+      lineNumber: 65,
       columnNumber: 9
     }
   }, card.word)), __jsx("div", {
@@ -602,7 +615,7 @@ function Card({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 67,
       columnNumber: 7
     }
   }, __jsx("div", {
@@ -610,7 +623,7 @@ function Card({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62,
+      lineNumber: 68,
       columnNumber: 9
     }
   }, card.word)), __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
@@ -618,7 +631,7 @@ function Card({
     dynamic: [cardImage, isRevealed || clicked ? 'rgba(0, 0, 0, 0.0)' : '#333435', (isRevealed || clicked) && hover ? 'flex' : 'none'],
     __self: this
   }, `main.__jsx-style-dynamic-selector{background-image:url(${cardImage});background-size:cover;background-repeat:no-repeat;}.card.__jsx-style-dynamic-selector{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-basis:20%;-ms-flex-preferred-size:20%;flex-basis:20%;text-align:center;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;width:100%;margin:0 2px;cursor:pointer;}.word.__jsx-style-dynamic-selector{-webkit-align-self:center;-ms-flex-item-align:center;align-self:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;position:absolute;padding-top:4%;font-size:10px;font-family:sans-serif;color:${isRevealed || clicked ? 'rgba(0, 0, 0, 0.0)' : '#333435'};}.tooltip.__jsx-style-dynamic-selector{display:${(isRevealed || clicked) && hover ? 'flex' : 'none'};font-weight:400;font-size:10px;-webkit-align-self:center;-ms-flex-item-align:center;align-self:center;justify-self:center;}.tooltip.__jsx-style-dynamic-selector p.__jsx-style-dynamic-selector{color:white;font-weight:600;text-shadow:1px 1px 3px black;}.word.__jsx-style-dynamic-selector:hover{color:'#333435';}@media screen and (min-width:480px){.word.__jsx-style-dynamic-selector,.tooltip.__jsx-style-dynamic-selector{font-size:15px;}}@media screen and (min-width:720px){.word.__jsx-style-dynamic-selector,.tooltip.__jsx-style-dynamic-selector{font-size:20px;}}
-/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9qYWtlZG91Z2xhcyAxL2RldmVsb3BtZW50L25leHRKcy9jbi9jb21wb25lbnRzL0NhcmQuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBK0RrQixBQStIOEQsQUFLdEMsQUFVSyxBQVNtQixBQU96QixBQUtJLEFBSUMsQUFLQSxZQWJELEdBU2hCLEFBS0EsQ0FURixZQUpnQyxTQVJkLGNBeEJNLEVBeUJQLEtBUWpCLFVBUG9CLEdBWEssRUFkSyxDQUliLDJCQUhqQixzQ0F5QnNCLENBckJGLGtCQUNHLENBcUJ2QixXQVpvQixrQkFDSCxlQUNBLGVBQ1EsZ0JBWEEsT0FZWSxtQ0FDckMseURBWmEsV0FDRSxhQUNFLGVBQ2pCIiwiZmlsZSI6Ii9Vc2Vycy9qYWtlZG91Z2xhcyAxL2RldmVsb3BtZW50L25leHRKcy9jbi9jb21wb25lbnRzL0NhcmQuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyB1c2VTdGF0ZSB9IGZyb20gJ3JlYWN0JztcblxuZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gQ2FyZCh7IGNhcmQsIGlzQ29kZU1hc3Rlciwgcm93SW5kZXgsIGNvbHVtbkluZGV4LCByZXZlYWxDYXJkIH0pIHtcblxuICBjb25zdCBbY2xpY2tlZCwgdXBkYXRlQ2xpY2tlZF0gPSB1c2VTdGF0ZShmYWxzZSk7XG4gIGNvbnN0IFtob3Zlciwgc2V0SG92ZXJdID0gdXNlU3RhdGUoZmFsc2UpO1xuXG4gIGNvbnN0IHsgaXNSZXZlYWxlZCB9ID0gY2FyZDtcbiAgY29uc3QgeyB0ZWFtIH0gPSBjYXJkO1xuICBsZXQgY2FyZEltYWdlID0gJy9jYXJkLnBuZyc7XG4gIGlmIChpc0NvZGVNYXN0ZXIpIHtcbiAgICBzd2l0Y2ggKHRlYW0pIHtcbiAgICAgIGNhc2UgMDpcbiAgICAgICAgY2FyZEltYWdlID0gJy9jYXJkLnBuZyc7XG4gICAgICAgIGJyZWFrO1xuICAgICAgY2FzZSAxOlxuICAgICAgICBjYXJkSW1hZ2UgPSAnL3JlZHRpbnQucG5nJ1xuICAgICAgICBicmVhaztcbiAgICAgIGNhc2UgMjpcbiAgICAgICAgY2FyZEltYWdlID0gJy9ibHVldGludC5wbmcnXG4gICAgICAgIGJyZWFrO1xuICAgICAgY2FzZSAzOlxuICAgICAgICBjYXJkSW1hZ2UgPSAnL2RlYXRodGludC5wbmcnXG4gICAgICAgIGJyZWFrO1xuICAgICAgZGVmYXVsdDpcbiAgICAgICAgY2FyZEltYWdlID0gJy9jYXJkLnBuZydcbiAgICB9XG4gIH1cbiAgaWYgKGlzUmV2ZWFsZWQgfHwgY2xpY2tlZCkge1xuICAgIHN3aXRjaCAodGVhbSkge1xuICAgICAgY2FzZSAwOlxuICAgICAgICBjYXJkSW1hZ2UgPSAnL25ldXRyYWwucG5nJztcbiAgICAgICAgYnJlYWs7XG4gICAgICBjYXNlIDE6XG4gICAgICAgIGNhcmRJbWFnZSA9ICcvcmVkLnBuZydcbiAgICAgICAgYnJlYWs7XG4gICAgICBjYXNlIDI6XG4gICAgICAgIGNhcmRJbWFnZSA9ICcvYmx1ZS5wbmcnXG4gICAgICAgIGJyZWFrO1xuICAgICAgY2FzZSAzOlxuICAgICAgICBjYXJkSW1hZ2UgPSAnL2RlYXRoLnBuZydcbiAgICAgICAgYnJlYWs7XG4gICAgICBkZWZhdWx0OlxuICAgICAgICBjYXJkSW1hZ2UgPSAnL2NhcmQucG5nJ1xuICAgIH1cbiAgfVxuICByZXR1cm4gKFxuICAgIDxtYWluXG4gICAgICBvbkNsaWNrPXsoKSA9PiB7XG4gICAgICAgIGlmICghY2FyZC5pc1JldmVhbGVkICYmICFpc0NvZGVNYXN0ZXIpIHtcbiAgICAgICAgICByZXZlYWxDYXJkKHJvd0luZGV4LCBjb2x1bW5JbmRleCwgY2FyZC50ZWFtKVxuICAgICAgICAgIHVwZGF0ZUNsaWNrZWQodHJ1ZSk7XG4gICAgICAgIH1cbiAgICAgIH19XG4gICAgICBvbk1vdXNlRW50ZXI9eygpID0+IHNldEhvdmVyKHRydWUpfVxuICAgICAgb25Nb3VzZUxlYXZlPXsoKSA9PiBzZXRIb3ZlcihmYWxzZSl9XG4gICAgPlxuICAgICAgPGRpdiBjbGFzc05hbWU9XCJ0b29sdGlwXCIgPlxuICAgICAgICA8cD57Y2FyZC53b3JkfTwvcD5cbiAgICAgIDwvZGl2PlxuICAgICAgPGRpdiBjbGFzc05hbWU9XCJjYXJkXCI+XG4gICAgICAgIDxkaXYgY2xhc3NOYW1lPVwid29yZFwiID57Y2FyZC53b3JkfTwvZGl2PlxuICAgICAgPC9kaXY+XG4gICAgICA8c3R5bGUganN4PntgXG4gICAgICAgIG1haW4ge1xuICAgICAgICAgIGJhY2tncm91bmQtaW1hZ2U6IHVybCgke2NhcmRJbWFnZX0pO1xuICAgICAgICAgIGJhY2tncm91bmQtc2l6ZTogY292ZXI7XG4gICAgICAgICAgYmFja2dyb3VuZC1yZXBlYXQ6IG5vLXJlcGVhdDtcbiAgICAgICAgfVxuICAgICAgICAuY2FyZCB7XG4gICAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgICBmbGV4LWJhc2lzOiAyMCU7XG4gICAgICAgICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgICAgICAgIGFsaWduLWNvbnRlbnQ6IGNlbnRlcjtcbiAgICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgICAgICAgICB3aWR0aDogMTAwJTtcbiAgICAgICAgICBtYXJnaW46IDAgMnB4O1xuICAgICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgICAgfVxuICAgICAgICAud29yZCB7XG4gICAgICAgICAgYWxpZ24tc2VsZjogY2VudGVyO1xuICAgICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICAgICAgICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICAgICAgICBwYWRkaW5nLXRvcDogNCU7XG4gICAgICAgICAgZm9udC1zaXplOiAxMHB4O1xuICAgICAgICAgIGZvbnQtZmFtaWx5OiBzYW5zLXNlcmlmO1xuICAgICAgICAgIGNvbG9yOiAke2lzUmV2ZWFsZWQgfHwgY2xpY2tlZCA/ICdyZ2JhKDAsIDAsIDAsIDAuMCknIDogJyMzMzM0MzUnfTtcbiAgICAgICAgfVxuICAgICAgICAudG9vbHRpcCB7XG4gICAgICAgICAgZGlzcGxheTogJHsoaXNSZXZlYWxlZCB8fCBjbGlja2VkKSAmJiBob3ZlciA/ICdmbGV4JyA6ICdub25lJ307XG4gICAgICAgICAgZm9udC13ZWlnaHQ6IDQwMDtcbiAgICAgICAgICBmb250LXNpemU6IDEwcHg7XG4gICAgICAgICAgYWxpZ24tc2VsZjogY2VudGVyO1xuICAgICAgICAgIGp1c3RpZnktc2VsZjogY2VudGVyO1xuICAgICAgICB9XG4gICAgICAgIC50b29sdGlwIHAge1xuICAgICAgICAgIGNvbG9yOiB3aGl0ZTtcbiAgICAgICAgICBmb250LXdlaWdodDogNjAwO1xuICAgICAgICAgIHRleHQtc2hhZG93OiAxcHggMXB4IDNweCBibGFjaztcbiAgICAgICAgfVxuICAgICAgICAud29yZDpob3ZlciB7XG4gICAgICAgICAgY29sb3I6ICcjMzMzNDM1JztcbiAgICAgICAgfVxuICAgICAgICBAbWVkaWEgc2NyZWVuIGFuZCAobWluLXdpZHRoOiA0ODBweCkge1xuICAgICAgICAgIC53b3JkLCAudG9vbHRpcCB7XG4gICAgICAgICAgICBmb250LXNpemU6IDE1cHg7XG4gICAgICAgICAgfVxuICAgICAgICB9XG4gICAgICAgIEBtZWRpYSBzY3JlZW4gYW5kIChtaW4td2lkdGg6IDcyMHB4KSB7XG4gICAgICAgICAgLndvcmQsIC50b29sdGlwIHtcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogMjBweDtcbiAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICAgIGB9PC9zdHlsZT5cbiAgICA8L21haW4gPlxuICApXG59Il19 */
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9qYWtlZG91Z2xhcyAxL2RldmVsb3BtZW50L25leHRKcy9jbi9jb21wb25lbnRzL0NhcmQuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBcUVrQixBQUc4RCxBQUt0QyxBQVVLLEFBU21CLEFBT3pCLEFBS0ksQUFJQyxBQUtBLFlBYkQsR0FTaEIsQUFLQSxDQVRGLFlBSmdDLFNBUmQsY0F4Qk0sRUF5QlAsS0FRakIsVUFQb0IsR0FYSyxFQWRLLENBSWIsMkJBSGpCLHNDQXlCc0IsQ0FyQkYsa0JBQ0csQ0FxQnZCLFdBWm9CLGtCQUNILGVBQ0EsZUFDUSxnQkFYQSxPQVlZLG1DQUNyQyx5REFaYSxXQUNFLGFBQ0UsZUFDakIiLCJmaWxlIjoiL1VzZXJzL2pha2Vkb3VnbGFzIDEvZGV2ZWxvcG1lbnQvbmV4dEpzL2NuL2NvbXBvbmVudHMvQ2FyZC5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IHVzZVN0YXRlIH0gZnJvbSAncmVhY3QnO1xuXG5leHBvcnQgZGVmYXVsdCBmdW5jdGlvbiBDYXJkKHsgY2FyZCwgaXNDb2RlTWFzdGVyLCByb3dJbmRleCwgY29sdW1uSW5kZXgsIHJldmVhbENhcmQgfSkge1xuXG4gIGNvbnN0IFtjbGlja2VkLCB1cGRhdGVDbGlja2VkXSA9IHVzZVN0YXRlKGZhbHNlKTtcbiAgY29uc3QgW2hvdmVyLCBzZXRIb3Zlcl0gPSB1c2VTdGF0ZShmYWxzZSk7XG5cbiAgY29uc3QgeyBpc1JldmVhbGVkIH0gPSBjYXJkO1xuICBjb25zdCB7IHRlYW0gfSA9IGNhcmQ7XG4gIGxldCBjYXJkSW1hZ2UgPSAnL2NhcmQucG5nJztcbiAgaWYgKGlzQ29kZU1hc3Rlcikge1xuICAgIHN3aXRjaCAodGVhbSkge1xuICAgICAgY2FzZSAwOlxuICAgICAgICBjYXJkSW1hZ2UgPSAnL2NhcmQucG5nJztcbiAgICAgICAgYnJlYWs7XG4gICAgICBjYXNlIDE6XG4gICAgICAgIGNhcmRJbWFnZSA9ICcvcmVkdGludC5wbmcnXG4gICAgICAgIGJyZWFrO1xuICAgICAgY2FzZSAyOlxuICAgICAgICBjYXJkSW1hZ2UgPSAnL2JsdWV0aW50LnBuZydcbiAgICAgICAgYnJlYWs7XG4gICAgICBjYXNlIDM6XG4gICAgICAgIGNhcmRJbWFnZSA9ICcvZGVhdGh0aW50LnBuZydcbiAgICAgICAgYnJlYWs7XG4gICAgICBjYXNlIDQ6XG4gICAgICAgIGNhcmRJbWFnZSA9ICcvZ3JlZW50aW50LnBuZydcbiAgICAgICAgYnJlYWs7XG4gICAgICBkZWZhdWx0OlxuICAgICAgICBjYXJkSW1hZ2UgPSAnL2NhcmQucG5nJ1xuICAgIH1cbiAgfVxuICBpZiAoaXNSZXZlYWxlZCB8fCBjbGlja2VkKSB7XG4gICAgc3dpdGNoICh0ZWFtKSB7XG4gICAgICBjYXNlIDA6XG4gICAgICAgIGNhcmRJbWFnZSA9ICcvbmV1dHJhbC5wbmcnO1xuICAgICAgICBicmVhaztcbiAgICAgIGNhc2UgMTpcbiAgICAgICAgY2FyZEltYWdlID0gJy9yZWQucG5nJ1xuICAgICAgICBicmVhaztcbiAgICAgIGNhc2UgMjpcbiAgICAgICAgY2FyZEltYWdlID0gJy9ibHVlLnBuZydcbiAgICAgICAgYnJlYWs7XG4gICAgICBjYXNlIDM6XG4gICAgICAgIGNhcmRJbWFnZSA9ICcvZGVhdGgucG5nJ1xuICAgICAgICBicmVhaztcbiAgICAgIGNhc2UgNDpcbiAgICAgICAgY2FyZEltYWdlID0gJy9ncmVlbi5wbmcnXG4gICAgICAgIGJyZWFrO1xuICAgICAgZGVmYXVsdDpcbiAgICAgICAgY2FyZEltYWdlID0gJy9jYXJkLnBuZydcbiAgICB9XG4gIH1cbiAgcmV0dXJuIChcbiAgICA8bWFpblxuICAgICAgb25DbGljaz17KCkgPT4ge1xuICAgICAgICBpZiAoIWNhcmQuaXNSZXZlYWxlZCAmJiAhaXNDb2RlTWFzdGVyKSB7XG4gICAgICAgICAgcmV2ZWFsQ2FyZChyb3dJbmRleCwgY29sdW1uSW5kZXgsIGNhcmQudGVhbSlcbiAgICAgICAgICB1cGRhdGVDbGlja2VkKHRydWUpO1xuICAgICAgICB9XG4gICAgICB9fVxuICAgICAgb25Nb3VzZUVudGVyPXsoKSA9PiBzZXRIb3Zlcih0cnVlKX1cbiAgICAgIG9uTW91c2VMZWF2ZT17KCkgPT4gc2V0SG92ZXIoZmFsc2UpfVxuICAgID5cbiAgICAgIDxkaXYgY2xhc3NOYW1lPVwidG9vbHRpcFwiID5cbiAgICAgICAgPHA+e2NhcmQud29yZH08L3A+XG4gICAgICA8L2Rpdj5cbiAgICAgIDxkaXYgY2xhc3NOYW1lPVwiY2FyZFwiPlxuICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cIndvcmRcIiA+e2NhcmQud29yZH08L2Rpdj5cbiAgICAgIDwvZGl2PlxuICAgICAgPHN0eWxlIGpzeD57YFxuICAgICAgICBtYWluIHtcbiAgICAgICAgICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoJHtjYXJkSW1hZ2V9KTtcbiAgICAgICAgICBiYWNrZ3JvdW5kLXNpemU6IGNvdmVyO1xuICAgICAgICAgIGJhY2tncm91bmQtcmVwZWF0OiBuby1yZXBlYXQ7XG4gICAgICAgIH1cbiAgICAgICAgLmNhcmQge1xuICAgICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgICAgZmxleC1iYXNpczogMjAlO1xuICAgICAgICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICAgICAgICBhbGlnbi1jb250ZW50OiBjZW50ZXI7XG4gICAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgICAgICAgd2lkdGg6IDEwMCU7XG4gICAgICAgICAgbWFyZ2luOiAwIDJweDtcbiAgICAgICAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgICAgIH1cbiAgICAgICAgLndvcmQge1xuICAgICAgICAgIGFsaWduLXNlbGY6IGNlbnRlcjtcbiAgICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgICAgICAgcGFkZGluZy10b3A6IDQlO1xuICAgICAgICAgIGZvbnQtc2l6ZTogMTBweDtcbiAgICAgICAgICBmb250LWZhbWlseTogc2Fucy1zZXJpZjtcbiAgICAgICAgICBjb2xvcjogJHtpc1JldmVhbGVkIHx8IGNsaWNrZWQgPyAncmdiYSgwLCAwLCAwLCAwLjApJyA6ICcjMzMzNDM1J307XG4gICAgICAgIH1cbiAgICAgICAgLnRvb2x0aXAge1xuICAgICAgICAgIGRpc3BsYXk6ICR7KGlzUmV2ZWFsZWQgfHwgY2xpY2tlZCkgJiYgaG92ZXIgPyAnZmxleCcgOiAnbm9uZSd9O1xuICAgICAgICAgIGZvbnQtd2VpZ2h0OiA0MDA7XG4gICAgICAgICAgZm9udC1zaXplOiAxMHB4O1xuICAgICAgICAgIGFsaWduLXNlbGY6IGNlbnRlcjtcbiAgICAgICAgICBqdXN0aWZ5LXNlbGY6IGNlbnRlcjtcbiAgICAgICAgfVxuICAgICAgICAudG9vbHRpcCBwIHtcbiAgICAgICAgICBjb2xvcjogd2hpdGU7XG4gICAgICAgICAgZm9udC13ZWlnaHQ6IDYwMDtcbiAgICAgICAgICB0ZXh0LXNoYWRvdzogMXB4IDFweCAzcHggYmxhY2s7XG4gICAgICAgIH1cbiAgICAgICAgLndvcmQ6aG92ZXIge1xuICAgICAgICAgIGNvbG9yOiAnIzMzMzQzNSc7XG4gICAgICAgIH1cbiAgICAgICAgQG1lZGlhIHNjcmVlbiBhbmQgKG1pbi13aWR0aDogNDgwcHgpIHtcbiAgICAgICAgICAud29yZCwgLnRvb2x0aXAge1xuICAgICAgICAgICAgZm9udC1zaXplOiAxNXB4O1xuICAgICAgICAgIH1cbiAgICAgICAgfVxuICAgICAgICBAbWVkaWEgc2NyZWVuIGFuZCAobWluLXdpZHRoOiA3MjBweCkge1xuICAgICAgICAgIC53b3JkLCAudG9vbHRpcCB7XG4gICAgICAgICAgICBmb250LXNpemU6IDIwcHg7XG4gICAgICAgICAgfVxuICAgICAgICB9XG4gICAgICBgfTwvc3R5bGU+XG4gICAgPC9tYWluID5cbiAgKVxufSJdfQ== */
 /*@ sourceURL=/Users/jakedouglas 1/development/nextJs/cn/components/Card.js */`));
 }
 
@@ -831,11 +844,10 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 function NewGameButton({
   solid,
   officialWords = true,
-  setIsCodeMaster
+  setIsCodeMaster = null,
+  isGreenMode = false
 }) {
-  const newGame = ({
-    firstPlayer = null
-  }) => {
+  const newGame = () => {
     if (setIsCodeMaster) setIsCodeMaster(false);
 
     const randomInt = (min, max) => {
@@ -845,7 +857,8 @@ function NewGameButton({
     const token = `${random_words__WEBPACK_IMPORTED_MODULE_1___default()()}-${random_words__WEBPACK_IMPORTED_MODULE_1___default()()}-${randomInt(100, 999)}`;
     const body = JSON.stringify({
       token,
-      officialWords
+      officialWords,
+      green: isGreenMode
     });
     next_router__WEBPACK_IMPORTED_MODULE_3___default.a.push(`/game?token=${token}`);
     isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_2___default()('/api/games', {
@@ -864,7 +877,7 @@ function NewGameButton({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30,
+      lineNumber: 31,
       columnNumber: 5
     }
   }, "New Game");
@@ -964,20 +977,44 @@ function ScoreBoard({
       lineNumber: 10,
       columnNumber: 9
     }
-  }, __jsx("div", {
+  }, gameStatus !== 5 ? __jsx("div", {
     className: "final",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11,
-      columnNumber: 11
+      lineNumber: 12,
+      columnNumber: 15
     }
-  }, _constants__WEBPACK_IMPORTED_MODULE_1__["gameStatusToString"][gameStatus] + '!')) : __jsx("div", {
-    className: "score-board",
+  }, _constants__WEBPACK_IMPORTED_MODULE_1__["gameStatusToString"][gameStatus] + '!') : __jsx("div", {
+    className: "team green-team",
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 14,
+      columnNumber: 15
+    }
+  }, __jsx("div", {
+    className: "color-box green",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15,
+      columnNumber: 17
+    }
+  }, `${cardsRemaining.green}`), __jsx("div", {
+    className: "cards-remaining",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18,
+      columnNumber: 17
+    }
+  }, "CARDS REMAINING"))) : __jsx("div", {
+    className: "score-board",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 26,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -985,7 +1022,7 @@ function ScoreBoard({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15,
+      lineNumber: 27,
       columnNumber: 11
     }
   }, __jsx("div", {
@@ -993,14 +1030,14 @@ function ScoreBoard({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16,
+      lineNumber: 28,
       columnNumber: 13
     }
   }, gameStatus === 1 && __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17,
+      lineNumber: 29,
       columnNumber: 37
     }
   }, "Red's Turn  ", __jsx(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__["FontAwesomeIcon"], {
@@ -1008,7 +1045,7 @@ function ScoreBoard({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17,
+      lineNumber: 29,
       columnNumber: 54
     }
   }))), __jsx("div", {
@@ -1016,7 +1053,7 @@ function ScoreBoard({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19,
+      lineNumber: 31,
       columnNumber: 13
     }
   }, `${cardsRemaining.red}`), __jsx("div", {
@@ -1024,7 +1061,7 @@ function ScoreBoard({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22,
+      lineNumber: 34,
       columnNumber: 13
     }
   }, "CARDS REMAINING")), __jsx("div", {
@@ -1032,7 +1069,7 @@ function ScoreBoard({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26,
+      lineNumber: 38,
       columnNumber: 11
     }
   }, __jsx("div", {
@@ -1040,14 +1077,14 @@ function ScoreBoard({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27,
+      lineNumber: 39,
       columnNumber: 13
     }
   }, gameStatus === 2 && __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28,
+      lineNumber: 40,
       columnNumber: 37
     }
   }, "Blue's Turn  ", __jsx(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__["FontAwesomeIcon"], {
@@ -1055,7 +1092,7 @@ function ScoreBoard({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28,
+      lineNumber: 40,
       columnNumber: 55
     }
   }))), __jsx("div", {
@@ -1063,7 +1100,7 @@ function ScoreBoard({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30,
+      lineNumber: 42,
       columnNumber: 13
     }
   }, `${cardsRemaining.blue}`), __jsx("div", {
@@ -1071,14 +1108,14 @@ function ScoreBoard({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33,
+      lineNumber: 45,
       columnNumber: 13
     }
   }, "CARDS REMAINING"))), __jsx("style", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39,
+      lineNumber: 51,
       columnNumber: 5
     }
   }, " ", `
@@ -1117,11 +1154,24 @@ function ScoreBoard({
         background: #E03222;
         border: 4px solid #CA0A05;
       }
+      .green {
+        background: #12B142;
+        border: 4px solid #009526;
+      }
       .final {
         flex-basis: 100%;
         font-size: 40px;
-        white;
         text-align: center;
+      }
+      .green-status {
+        flex-basis: 100%;
+        font-size: 30px;
+        text-align: center;
+      }
+      .team.green-team {
+        flex-basis: 100%;
+        display: flex;
+        justify-content: center;
       }
       .cards-remaining {
         flex-basis: 60%;
@@ -1238,17 +1288,31 @@ function Toggle({
 /*!**********************!*\
   !*** ./constants.js ***!
   \**********************/
-/*! exports provided: gameStatusToString */
+/*! exports provided: gameStatusToString, cardTeamToString */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "gameStatusToString", function() { return gameStatusToString; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cardTeamToString", function() { return cardTeamToString; });
 const gameStatusToString = {
   1: "Red's turn",
   2: "Blue's turn",
   3: 'Red Wins',
-  4: 'Blue Wins'
+  4: 'Blue Wins',
+  5: 'Your Turn',
+  // Green
+  6: 'You Win',
+  // Green
+  7: 'You Lose' // Green
+
+};
+const cardTeamToString = {
+  0: 'neutral',
+  1: 'red',
+  2: 'blue',
+  3: 'death',
+  4: 'green'
 };
 
 /***/ }),
@@ -3001,7 +3065,7 @@ function Game() {
 
 /***/ }),
 
-/***/ 6:
+/***/ 4:
 /*!*****************************!*\
   !*** multi ./pages/game.js ***!
   \*****************************/

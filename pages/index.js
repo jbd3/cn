@@ -9,6 +9,7 @@ import Link from 'next/link'
 export default function Index() {
 
   const [officialWords, setOfficialWords] = useState(true);
+  const [isGreenMode, setIsGreenMode] = useState(false);
 
   return (
     <Layout>
@@ -27,7 +28,10 @@ export default function Index() {
         <div className="toggle">
           <Toggle text={`${officialWords ? 'Use official words' : 'Use random words'}`} onToggle={() => setOfficialWords(!officialWords)} checked={officialWords} />
         </div>
-        <NewGameButton solid officialWords={officialWords} />
+        <div className='toggle'>
+          <Toggle text='Duet Mode' onToggle={() => setIsGreenMode(!isGreenMode)} checked={isGreenMode} />
+        </div>
+        <NewGameButton solid officialWords={officialWords} isGreenMode={isGreenMode} />
         <div className="mb-4 token-form">
           <div className="flex bg-gray-100 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             <input className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Current game token" />
