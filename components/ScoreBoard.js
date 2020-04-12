@@ -4,7 +4,8 @@ import { faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons'
 
 export default function ScoreBoard({ cardsRemaining, scoreBoard }) {
   const gameStatus = scoreBoard?.gameStatus;
-  return (<>
+  return (
+    <div className='container'>
     {gameStatus > 2
       ? (
         <div className="score-board">
@@ -53,6 +54,7 @@ export default function ScoreBoard({ cardsRemaining, scoreBoard }) {
         display: flex;
         flex-direction: column;
         width: 450px;
+        max-width: 100vw;
         align-self: center;
         color: white;
         font-weight: 600;
@@ -65,7 +67,7 @@ export default function ScoreBoard({ cardsRemaining, scoreBoard }) {
       .arrow {
         flex-basis: 40%;
         display: flex;
-        font-size: 20px;
+        font-size: 15px;
         justify-content: flex-end;
         align-items: center;
       }
@@ -108,7 +110,15 @@ export default function ScoreBoard({ cardsRemaining, scoreBoard }) {
         display: flex;
         align-items: center;
       }
+      @media screen and (min-width: 480px) {
+        .arrow {
+          font-size: 20px;
+        }
+        .cards-remaining {
+          font-size: 20px;
+        }
+      }
     `}</style >
-  </>
+  </div>
   )
 }

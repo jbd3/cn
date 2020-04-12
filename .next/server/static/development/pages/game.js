@@ -972,12 +972,20 @@ function ScoreBoard({
   scoreBoard
 }) {
   const gameStatus = scoreBoard === null || scoreBoard === void 0 ? void 0 : scoreBoard.gameStatus;
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, gameStatus > 2 ? __jsx("div", {
+  return __jsx("div", {
+    className: "container",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8,
+      columnNumber: 5
+    }
+  }, gameStatus > 2 ? __jsx("div", {
     className: "score-board",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10,
+      lineNumber: 11,
       columnNumber: 9
     }
   }, gameStatus !== 5 ? __jsx("div", {
@@ -985,7 +993,7 @@ function ScoreBoard({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12,
+      lineNumber: 13,
       columnNumber: 15
     }
   }, _constants__WEBPACK_IMPORTED_MODULE_1__["gameStatusToString"][gameStatus] + '!') : __jsx("div", {
@@ -993,7 +1001,7 @@ function ScoreBoard({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14,
+      lineNumber: 15,
       columnNumber: 15
     }
   }, __jsx("div", {
@@ -1001,7 +1009,7 @@ function ScoreBoard({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15,
+      lineNumber: 16,
       columnNumber: 17
     }
   }, `${cardsRemaining.green}`), __jsx("div", {
@@ -1009,7 +1017,7 @@ function ScoreBoard({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 19,
       columnNumber: 17
     }
   }, "CARDS REMAINING"))) : __jsx("div", {
@@ -1017,7 +1025,7 @@ function ScoreBoard({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26,
+      lineNumber: 27,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -1025,7 +1033,7 @@ function ScoreBoard({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27,
+      lineNumber: 28,
       columnNumber: 11
     }
   }, __jsx("div", {
@@ -1033,14 +1041,14 @@ function ScoreBoard({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28,
+      lineNumber: 29,
       columnNumber: 13
     }
   }, gameStatus === 1 && __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29,
+      lineNumber: 30,
       columnNumber: 37
     }
   }, "Red's Turn  ", __jsx(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__["FontAwesomeIcon"], {
@@ -1048,7 +1056,7 @@ function ScoreBoard({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29,
+      lineNumber: 30,
       columnNumber: 54
     }
   }))), __jsx("div", {
@@ -1056,7 +1064,7 @@ function ScoreBoard({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31,
+      lineNumber: 32,
       columnNumber: 13
     }
   }, `${cardsRemaining.red}`), __jsx("div", {
@@ -1064,7 +1072,7 @@ function ScoreBoard({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34,
+      lineNumber: 35,
       columnNumber: 13
     }
   }, "CARDS REMAINING")), __jsx("div", {
@@ -1072,7 +1080,7 @@ function ScoreBoard({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38,
+      lineNumber: 39,
       columnNumber: 11
     }
   }, __jsx("div", {
@@ -1080,14 +1088,14 @@ function ScoreBoard({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39,
+      lineNumber: 40,
       columnNumber: 13
     }
   }, gameStatus === 2 && __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40,
+      lineNumber: 41,
       columnNumber: 37
     }
   }, "Blue's Turn  ", __jsx(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__["FontAwesomeIcon"], {
@@ -1095,7 +1103,7 @@ function ScoreBoard({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40,
+      lineNumber: 41,
       columnNumber: 55
     }
   }))), __jsx("div", {
@@ -1103,7 +1111,7 @@ function ScoreBoard({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42,
+      lineNumber: 43,
       columnNumber: 13
     }
   }, `${cardsRemaining.blue}`), __jsx("div", {
@@ -1111,14 +1119,14 @@ function ScoreBoard({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 46,
       columnNumber: 13
     }
   }, "CARDS REMAINING"))), __jsx("style", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
+      lineNumber: 52,
       columnNumber: 5
     }
   }, " ", `
@@ -1126,6 +1134,7 @@ function ScoreBoard({
         display: flex;
         flex-direction: column;
         width: 450px;
+        max-width: 100vw;
         align-self: center;
         color: white;
         font-weight: 600;
@@ -1138,7 +1147,7 @@ function ScoreBoard({
       .arrow {
         flex-basis: 40%;
         display: flex;
-        font-size: 20px;
+        font-size: 15px;
         justify-content: flex-end;
         align-items: center;
       }
@@ -1180,6 +1189,14 @@ function ScoreBoard({
         flex-basis: 60%;
         display: flex;
         align-items: center;
+      }
+      @media screen and (min-width: 480px) {
+        .arrow {
+          font-size: 20px;
+        }
+        .cards-remaining {
+          font-size: 20px;
+        }
       }
     `));
 }
