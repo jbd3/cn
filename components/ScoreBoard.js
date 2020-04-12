@@ -55,9 +55,9 @@ export default function ScoreBoard({ cardsRemaining, scoreBoard }) {
         flex-direction: column;
         width: 450px;
         max-width: 100vw;
-        align-self: center;
         color: white;
         font-weight: 600;
+        margin: 0 auto;
       }
       .team {
         display: flex;

@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -344,7 +344,7 @@ function Index() {
       lineNumber: 88,
       columnNumber: 11
     }
-  })), Array.isArray(boardMap) && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("div", {
+  })), boardMap && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("div", {
     className: "link-container",
     onClick: () => copyToClipboard(),
     __self: this,
@@ -1135,9 +1135,9 @@ function ScoreBoard({
         flex-direction: column;
         width: 450px;
         max-width: 100vw;
-        align-self: center;
         color: white;
         font-weight: 600;
+        margin: 0 auto;
       }
       .team {
         display: flex;
@@ -3085,7 +3085,7 @@ function Game() {
 
 /***/ }),
 
-/***/ 5:
+/***/ 4:
 /*!*****************************!*\
   !*** multi ./pages/game.js ***!
   \*****************************/

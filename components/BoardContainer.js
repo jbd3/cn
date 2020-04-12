@@ -88,7 +88,7 @@ export default function Index() {
           <Loader />
         </div>
       )}
-      {Array.isArray(boardMap) && (<>
+      {boardMap && (<>
         <div className="link-container" onClick={() => copyToClipboard()}>
           <div className="mb-2 token-form">
             <div className="flex bg-gray-100 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">

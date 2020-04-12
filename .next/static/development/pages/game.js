@@ -254,7 +254,7 @@ function Index() {
       lineNumber: 88,
       columnNumber: 11
     }
-  })), Array.isArray(boardMap) && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("div", {
+  })), boardMap && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("div", {
     className: "link-container",
     onClick: function onClick() {
       return copyToClipboard();
@@ -935,7 +935,7 @@ function ScoreBoard(_ref) {
       lineNumber: 52,
       columnNumber: 5
     }
-  }, " ", "\n      .score-board {\n        display: flex;\n        flex-direction: column;\n        width: 450px;\n        max-width: 100vw;\n        align-self: center;\n        color: white;\n        font-weight: 600;\n      }\n      .team {\n        display: flex;\n        flex-direction: row;\n        margin-bottom: 5px;\n      }\n      .arrow {\n        flex-basis: 40%;\n        display: flex;\n        font-size: 15px;\n        justify-content: flex-end;\n        align-items: center;\n      }\n      .color-box {\n        flex-basis: 10%;\n        text-align: center;\n        padding: 5px; 2px;\n        margin: 0 10px;\n        border-radius: 5px;\n      }\n      .blue {\n        background: #0D659E;\n        border: 4px solid #005487;\n      }\n      .red {\n        background: #E03222;\n        border: 4px solid #CA0A05;\n      }\n      .green {\n        background: #12B142;\n        border: 4px solid #009526;\n      }\n      .final {\n        flex-basis: 100%;\n        font-size: 40px;\n        text-align: center;\n      }\n      .green-status {\n        flex-basis: 100%;\n        font-size: 30px;\n        text-align: center;\n      }\n      .team.green-team {\n        flex-basis: 100%;\n        display: flex;\n        justify-content: center;\n      }\n      .cards-remaining {\n        flex-basis: 60%;\n        display: flex;\n        align-items: center;\n      }\n      @media screen and (min-width: 480px) {\n        .arrow {\n          font-size: 20px;\n        }\n        .cards-remaining {\n          font-size: 20px;\n        }\n      }\n    "));
+  }, " ", "\n      .score-board {\n        display: flex;\n        flex-direction: column;\n        width: 450px;\n        max-width: 100vw;\n        color: white;\n        font-weight: 600;\n        margin: 0 auto;\n      }\n      .team {\n        display: flex;\n        flex-direction: row;\n        margin-bottom: 5px;\n      }\n      .arrow {\n        flex-basis: 40%;\n        display: flex;\n        font-size: 15px;\n        justify-content: flex-end;\n        align-items: center;\n      }\n      .color-box {\n        flex-basis: 10%;\n        text-align: center;\n        padding: 5px; 2px;\n        margin: 0 10px;\n        border-radius: 5px;\n      }\n      .blue {\n        background: #0D659E;\n        border: 4px solid #005487;\n      }\n      .red {\n        background: #E03222;\n        border: 4px solid #CA0A05;\n      }\n      .green {\n        background: #12B142;\n        border: 4px solid #009526;\n      }\n      .final {\n        flex-basis: 100%;\n        font-size: 40px;\n        text-align: center;\n      }\n      .green-status {\n        flex-basis: 100%;\n        font-size: 30px;\n        text-align: center;\n      }\n      .team.green-team {\n        flex-basis: 100%;\n        display: flex;\n        justify-content: center;\n      }\n      .cards-remaining {\n        flex-basis: 60%;\n        display: flex;\n        align-items: center;\n      }\n      @media screen and (min-width: 480px) {\n        .arrow {\n          font-size: 20px;\n        }\n        .cards-remaining {\n          font-size: 20px;\n        }\n      }\n    "));
 }
 
 /***/ }),
@@ -17604,7 +17604,7 @@ function Game() {
 
 /***/ }),
 
-/***/ 3:
+/***/ 2:
 /*!*********************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fgame&absolutePagePath=%2FUsers%2Fjakedouglas%201%2Fdevelopment%2FnextJs%2Fcn%2Fpages%2Fgame.js ***!
   \*********************************************************************************************************************************************/
@@ -17627,5 +17627,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=game.js.map
