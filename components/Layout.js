@@ -5,10 +5,12 @@ export default function Layout({ children }) {
   return (
     <main className="layout">
       <header>
-        <div className="topButton">
-          <Link href='/'>
+        <Link href='/'>
+          <div className="home-button">
             HOME
-          </Link>
+          </div>
+        </Link>
+        <div>
           <NewGameButton solid={false} />
         </div>
       </header>
@@ -21,12 +23,17 @@ export default function Layout({ children }) {
         }
         header {
           display:flex;
-          justify-content: flex-end;
+          justify-content: space-between;
           padding: 20px;
           border-bottom: 1px solid white;
         }
-        topButton {
+        .home-button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
           color: white;
+          font-weight: 600;
+          cursor: pointer;
         }
         footer {
           display: flex;

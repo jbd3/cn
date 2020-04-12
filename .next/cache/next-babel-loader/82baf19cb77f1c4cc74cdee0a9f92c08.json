@@ -1,0 +1,1 @@
+{"ast":null,"code":"export var gameStatusToString = {\n  1: \"Red's turn\",\n  2: \"Blue's turn\",\n  3: 'Red Wins',\n  4: 'Blue Wins'\n};","map":null,"metadata":{},"sourceType":"module"}

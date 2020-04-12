@@ -34,7 +34,7 @@ export default function Index() {
               font-display: swap;
             }
             .toggle {
-              width: 214px;
+              width: 100%;
               margin-bottom: 20px;
             }
             .token-form {
