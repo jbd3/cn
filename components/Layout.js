@@ -1,19 +1,6 @@
-import Link from 'next/link'
-import NewGameButton from './NewGameButton';
-
 export default function Layout({ children }) {
   return (
     <main className="layout">
-      <header>
-        <Link href='/'>
-          <div className="home-button">
-            HOME
-          </div>
-        </Link>
-        <div>
-          <NewGameButton solid={false} />
-        </div>
-      </header>
       {children}
       <footer><p>Copyright Ignored 2020</p></footer>
       <style>{`

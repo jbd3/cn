@@ -4,12 +4,24 @@ import Toggle from '../components/Toggle'
 import { useState } from 'react';
 import NewGameButton from '../components/NewGameButton'
 
+import Link from 'next/link'
+
 export default function Index() {
 
   const [officialWords, setOfficialWords] = useState(true);
 
   return (
     <Layout>
+      <header>
+        <Link href='/'>
+          <div className="home-button">
+            HOME
+          </div>
+        </Link>
+        <div>
+          <NewGameButton solid={false} setIsCodeMaster={null} />
+        </div>
+      </header>
       <main className="home">
         <div className="hero">CODENAMES</div>
         <div className="toggle">

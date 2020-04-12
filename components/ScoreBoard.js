@@ -3,10 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons'
 
 export default function ScoreBoard({ cardsRemaining, scoreBoard }) {
-  console.log('faAngleDoubleRight: ', faAngleDoubleRight);
-  console.log('cardsRemaining: ', cardsRemaining);
-  console.log('scoreBoard: ', scoreBoard);
-  const { gameStatus } = scoreBoard;
+  const gameStatus = scoreBoard?.gameStatus;
   return (<>
     {gameStatus > 2
       ? (
@@ -17,7 +14,7 @@ export default function ScoreBoard({ cardsRemaining, scoreBoard }) {
         <div className="score-board">
           <div className="team">
             <div className="arrow">
-              {gameStatus === 1 && (<div>TURN ARROW <FontAwesomeIcon icon={faAngleDoubleRight} /></div>)}
+              {gameStatus === 1 && (<div>Red's Turn  <FontAwesomeIcon icon={faAngleDoubleRight} /></div>)}
             </div>
             <div className="color-box red">
               {`${cardsRemaining.red}`}
@@ -28,7 +25,7 @@ export default function ScoreBoard({ cardsRemaining, scoreBoard }) {
           </div>
           <div className="team">
             <div className="arrow">
-              {gameStatus === 2 && (<div>TURN ARROW <FontAwesomeIcon icon={faAngleDoubleRight} /></div>)}
+              {gameStatus === 2 && (<div>Blue's Turn  <FontAwesomeIcon icon={faAngleDoubleRight} /></div>)}
             </div>
             <div className="color-box blue">
               {`${cardsRemaining.blue}`}
@@ -56,6 +53,7 @@ export default function ScoreBoard({ cardsRemaining, scoreBoard }) {
       .arrow {
         flex-basis: 40%;
         display: flex;
+        font-size: 20px;
         justify-content: flex-end;
         align-items: center;
       }

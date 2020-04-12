@@ -3,8 +3,11 @@ import fetch from 'isomorphic-unfetch'
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import Board from './Board';
-import Toggle from '../components/Toggle'
-import ScoreBoard from '../components/ScoreBoard'
+import Toggle from '../components/Toggle';
+import ScoreBoard from '../components/ScoreBoard';
+import Link from 'next/link';
+import NewGameButton from './NewGameButton';
+import Loader from './Loader';
 
 function fetcher(url) {
   return fetch(url).then(r => r.json());
@@ -50,7 +53,7 @@ export default function Index() {
     red: 0,
     blue: 0,
   };
-  if (boardMap?.length) {
+  if (Array.isArray(boardMap)) {
     boardMap.forEach(row => {
       row.forEach(card => {
         if (card.team === 1 && !card.isRevealed) {
@@ -65,13 +68,27 @@ export default function Index() {
 
   return (
     <main>
+      <header>
+        <Link href='/'>
+          <div className="home-button">
+            HOME
+          </div>
+        </Link>
+        <div>
+          <NewGameButton solid={false} setIsCodeMaster={setIsCodeMaster} />
+        </div>
+      </header>
       <div className='game-title'>CODENAMES</div>
-      {loading && "Loading..."}
+      {loading && (
+        <div className="loader-container">
+          <Loader />
+        </div>
+      )}
       {boardMap && (<>
         <div className="link-container" onClick={() => copyToClipboard()}>
           <div className="mb-2 token-form">
             <div className="flex bg-gray-100 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-              <input className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" value={`${document.location.href}`} disabled />
+              <input className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" value={`${token}`} disabled />
               <button className="btn-teal" type="button">
                 Copy Link
               </button>
@@ -112,6 +129,10 @@ export default function Index() {
           flex-direction: column;
           justify-content: center;
         }
+        .loader-container {
+          justify-self: center;
+          align-self: center;
+        }
         .toggleContainer {
           width: 160px;
           align-self: center;
@@ -121,7 +142,7 @@ export default function Index() {
           width: 98vw;
           max-width: 400px;
           align-self: center;
-          font-size: 10px;
+          font-size: 20px;
           margin: 20px 0;
         }
       `}</style>
