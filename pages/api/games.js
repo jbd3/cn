@@ -2,12 +2,12 @@ import nextConnect from 'next-connect';
 import randomWords from 'random-words';
 import middleware from '../../database';
 import words from '../../words.json';
-import gameStatusToString from '../../constants';
 
 const handler = nextConnect();
 
 handler.use(middleware);
 
+// Find a game with token
 handler.get(async (req, res) => {
   const { token } = req.query;
   try {
@@ -19,8 +19,9 @@ handler.get(async (req, res) => {
   }
 });
 
+// Create new game
 handler.post(async (req, res) => {
-  const { token, officialWords, green } = req.body;
+  const { token, officialWords } = req.body;
   const randomInt = (min, max) => Math.round(min + (Math.random() * (max - min)));
 
   const doNotInclude = {};
@@ -33,9 +34,7 @@ handler.post(async (req, res) => {
     return word;
   };
 
-  let gameStatus = 5;
-  if (!green) gameStatus = req.query.firstPlayer || Math.random() >= 0.5 ? 1 : 2;
-  // Fill the board with neutral cards
+  const gameStatus = Math.random() >= 0.5 ? 1 : 2;
   const boardMap = [];
   for (let i = 0; i < 5; i++) {
     const row = [];
@@ -59,33 +58,21 @@ handler.post(async (req, res) => {
     boardMap[x][y].team = int;
   };
 
-  if (!green) {
-    for (let i = 0; i < 9; i++) {
-      addCardOwner(gameStatus === 1 ? 1 : 2);
-      if (i !== 0) {
-        addCardOwner(gameStatus === 1 ? 2 : 1);
-      }
+  for (let i = 0; i < 9; i++) {
+    addCardOwner(gameStatus === 1 ? 1 : 2);
+    if (i !== 0) {
+      addCardOwner(gameStatus === 1 ? 2 : 1);
     }
   }
 
-  if (green) {
-    for (let i = 0; i < 7; i++) {
-      addCardOwner(4);
-    }
-  }
   addCardOwner(3);
-  if (green) {
-    addCardOwner(3);
-    addCardOwner(3);
-  }
   const game = {
     token,
     boardMap,
     scoreBoard: {
-      red: gameStatus === 2 ? 9 : 8,
       blue: gameStatus === 1 ? 9 : 8,
-      gameStatus,
-      green: green ? 7 : null,
+      red: gameStatus === 2 ? 9 : 8,
+      gameStatus: gameStatus === 1 ? 1 : 2,
     },
     players: {
       blue: [],
@@ -101,6 +88,7 @@ handler.post(async (req, res) => {
   }
 });
 
+// Update game
 handler.put(async (req, res) => {
   const { x, y, token } = req.body;
   try {

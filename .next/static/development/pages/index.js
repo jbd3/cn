@@ -106,9 +106,8 @@ function NewGameButton(_ref) {
       body: body
     }) // .then(() => Router.push(`/game?token=${token}`))
     ["catch"](function (err) {
-      return console.log('Error adding new game: ', err);
-    })["finally"](function () {
-      return 'Done trying to get new game';
+      console.error('Error adding new game: ', err);
+      next_router__WEBPACK_IMPORTED_MODULE_3___default.a.push("/404");
     });
   };
 
@@ -118,7 +117,11 @@ function NewGameButton(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
+<<<<<<< HEAD
       lineNumber: 31,
+=======
+      lineNumber: 32,
+>>>>>>> master
       columnNumber: 5
     }
   }, "New Game");

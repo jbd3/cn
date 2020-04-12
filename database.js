@@ -14,7 +14,7 @@ async function database(req, res, next) {
     console.log('Connected to Database');
     return next();
   } catch (err) {
-    throw new Error('Error connecting to Database. Error: ', err)
+    throw new Error('Error connecting to Database. Error: ', err);
   }
 }
 

@@ -344,7 +344,7 @@ function Index() {
       lineNumber: 88,
       columnNumber: 11
     }
-  })), boardMap && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("div", {
+  })), Array.isArray(boardMap) && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("div", {
     className: "link-container",
     onClick: () => copyToClipboard(),
     __self: this,
@@ -745,35 +745,35 @@ function Loader() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 3,
-      columnNumber: 31
+      lineNumber: 4,
+      columnNumber: 7
     }
   }), __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 4,
-      columnNumber: 17
+      columnNumber: 18
     }
   }), __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 4,
-      columnNumber: 28
+      columnNumber: 29
     }
   }), __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 4,
-      columnNumber: 39
+      columnNumber: 40
     }
   }), __jsx("style", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 5,
+      lineNumber: 6,
       columnNumber: 7
     }
   }, `
@@ -781,7 +781,7 @@ function Loader() {
         display: inline-block;
         position: relative;
         width: 80px;
-        height: 80px;
+        height: 80vh;
       }
       .lds-ring div {
         box-sizing: border-box;
@@ -868,7 +868,10 @@ function NewGameButton({
       },
       body
     }) // .then(() => Router.push(`/game?token=${token}`))
-    .catch(err => console.log('Error adding new game: ', err)).finally(() => 'Done trying to get new game');
+    .catch(err => {
+      console.error('Error adding new game: ', err);
+      next_router__WEBPACK_IMPORTED_MODULE_3___default.a.push(`/404`);
+    });
   };
 
   return __jsx("button", {
@@ -877,7 +880,11 @@ function NewGameButton({
     __self: this,
     __source: {
       fileName: _jsxFileName,
+<<<<<<< HEAD
       lineNumber: 31,
+=======
+      lineNumber: 32,
+>>>>>>> master
       columnNumber: 5
     }
   }, "New Game");
@@ -3056,7 +3063,7 @@ function Game() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19,
+      lineNumber: 18,
       columnNumber: 9
     }
   }, `

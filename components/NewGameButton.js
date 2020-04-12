@@ -24,8 +24,10 @@ export default function NewGameButton({ solid, officialWords = true, setIsCodeMa
       body,
     })
       // .then(() => Router.push(`/game?token=${token}`))
-      .catch(err => console.log('Error adding new game: ', err))
-      .finally(() => 'Done trying to get new game')
+      .catch(err => {
+        console.error('Error adding new game: ', err)
+        Router.push(`/404`);
+      });
   }
   return (
     <button className={solid ? "btn btn-blue" : "bg-transparent hover:bg-gray-200 text-white font-semibold hover:text-black py-2 px-4 border border-white hover:border-transparent rounded"} onClick={newGame}>

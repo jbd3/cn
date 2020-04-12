@@ -224,7 +224,10 @@ function NewGameButton({
       },
       body
     }) // .then(() => Router.push(`/game?token=${token}`))
-    .catch(err => console.log('Error adding new game: ', err)).finally(() => 'Done trying to get new game');
+    .catch(err => {
+      console.error('Error adding new game: ', err);
+      next_router__WEBPACK_IMPORTED_MODULE_3___default.a.push(`/404`);
+    });
   };
 
   return __jsx("button", {
@@ -233,7 +236,11 @@ function NewGameButton({
     __self: this,
     __source: {
       fileName: _jsxFileName,
+<<<<<<< HEAD
       lineNumber: 31,
+=======
+      lineNumber: 32,
+>>>>>>> master
       columnNumber: 5
     }
   }, "New Game");

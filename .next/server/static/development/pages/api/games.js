@@ -88,11 +88,16 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
+<<<<<<< HEAD
 /******/ 	return __webpack_require__(__webpack_require__.s = 5);
+=======
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+>>>>>>> master
 /******/ })
 /************************************************************************/
 /******/ ({
 
+<<<<<<< HEAD
 /***/ "./constants.js":
 /*!**********************!*\
   !*** ./constants.js ***!
@@ -126,6 +131,8 @@ const cardTeamToString = {
 
 /***/ }),
 
+=======
+>>>>>>> master
 /***/ "./database.js":
 /*!*********************!*\
   !*** ./database.js ***!
@@ -180,14 +187,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _database__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../database */ "./database.js");
 /* harmony import */ var _words_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../words.json */ "./words.json");
 var _words_json__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack_require__.t(/*! ../../words.json */ "./words.json", 1);
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../constants */ "./constants.js");
-
 
 
 
 
 const handler = next_connect__WEBPACK_IMPORTED_MODULE_0___default()();
-handler.use(_database__WEBPACK_IMPORTED_MODULE_2__["default"]);
+handler.use(_database__WEBPACK_IMPORTED_MODULE_2__["default"]); // Find a game with token
+
 handler.get(async (req, res) => {
   const {
     token
@@ -202,12 +208,12 @@ handler.get(async (req, res) => {
     res.status(500).send();
     throw new Error(`Error loadin game with token: ${token}: ${err}`);
   }
-});
+}); // Create new game
+
 handler.post(async (req, res) => {
   const {
     token,
-    officialWords,
-    green
+    officialWords
   } = req.body;
 
   const randomInt = (min, max) => Math.round(min + Math.random() * (max - min));
@@ -227,9 +233,13 @@ handler.post(async (req, res) => {
     return word;
   };
 
+<<<<<<< HEAD
   let gameStatus = 5;
   if (!green) gameStatus = req.query.firstPlayer || Math.random() >= 0.5 ? 1 : 2; // Fill the board with neutral cards
 
+=======
+  const gameStatus = Math.random() >= 0.5 ? 1 : 2;
+>>>>>>> master
   const boardMap = [];
 
   for (let i = 0; i < 5; i++) {
@@ -262,6 +272,7 @@ handler.post(async (req, res) => {
     boardMap[x][y].team = int;
   };
 
+<<<<<<< HEAD
   if (!green) {
     for (let i = 0; i < 9; i++) {
       addCardOwner(gameStatus === 1 ? 1 : 2);
@@ -271,28 +282,31 @@ handler.post(async (req, res) => {
       }
     }
   }
+=======
+  for (let i = 0; i < 9; i++) {
+    addCardOwner(gameStatus === 1 ? 1 : 2);
+>>>>>>> master
 
-  if (green) {
-    for (let i = 0; i < 7; i++) {
-      addCardOwner(4);
+    if (i !== 0) {
+      addCardOwner(gameStatus === 1 ? 2 : 1);
     }
   }
 
   addCardOwner(3);
-
-  if (green) {
-    addCardOwner(3);
-    addCardOwner(3);
-  }
-
   const game = {
     token,
     boardMap,
     scoreBoard: {
+<<<<<<< HEAD
       red: gameStatus === 2 ? 9 : 8,
       blue: gameStatus === 1 ? 9 : 8,
       gameStatus,
       green: green ? 7 : null
+=======
+      blue: gameStatus === 1 ? 9 : 8,
+      red: gameStatus === 2 ? 9 : 8,
+      gameStatus: gameStatus === 1 ? 1 : 2
+>>>>>>> master
     },
     players: {
       blue: [],
@@ -307,7 +321,8 @@ handler.post(async (req, res) => {
     res.status(500).send();
     throw new Error(`Error adding new game: ${err}`);
   }
-});
+}); // Update game
+
 handler.put(async (req, res) => {
   const {
     x,
@@ -401,7 +416,11 @@ module.exports = JSON.parse("{\"list\":[\"Hollywood\",\"Screen\",\"Play\",\"Marb
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 5:
+=======
+/***/ 6:
+>>>>>>> master
 /*!**********************************!*\
   !*** multi ./pages/api/games.js ***!
   \**********************************/
