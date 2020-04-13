@@ -18,7 +18,6 @@ export default function Index() {
   const { query } = useRouter();
   const { token } = query;
   const { data } = useSWR(`/api/games?token=${token}`, fetcher, { refreshInterval: 100 });
-  console.log('data: ', data);
   if (data?.status === 404) Router.push('/404')
   let boardMap = data?.boardMap;
   let scoreBoard = data?.scoreBoard;
@@ -157,6 +156,7 @@ export default function Index() {
           align-self: center;
           font-size: 20px;
           margin: 20px 0;
+          cursor: pointer;
         }
       `}</style>
     </main>
