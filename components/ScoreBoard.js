@@ -57,7 +57,7 @@ export default function ScoreBoard({ cardsRemaining, scoreBoard }) {
         max-width: 100vw;
         color: white;
         font-weight: 600;
-        margin: 0 auto;
+        margin: 0 auto 15px;
         justify-self: center;
         align-self: center;
       }

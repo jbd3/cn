@@ -211,7 +211,6 @@ function Index() {
   } = swr__WEBPACK_IMPORTED_MODULE_1___default()(`/api/games?token=${token}`, fetcher, {
     refreshInterval: 100
   });
-  console.log('data: ', data);
   if ((data === null || data === void 0 ? void 0 : data.status) === 404) next_router__WEBPACK_IMPORTED_MODULE_3___default.a.push('/404');
   let boardMap = data === null || data === void 0 ? void 0 : data.boardMap;
   let scoreBoard = data === null || data === void 0 ? void 0 : data.scoreBoard;
@@ -280,17 +279,18 @@ function Index() {
 
   if (typeof boardMap === 'string') next_router__WEBPACK_IMPORTED_MODULE_3___default.a.push('/404');
   return __jsx("main", {
+    className: "board-container",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79,
+      lineNumber: 78,
       columnNumber: 5
     }
   }, __jsx("header", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80,
+      lineNumber: 79,
       columnNumber: 7
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
@@ -298,7 +298,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81,
+      lineNumber: 80,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -306,14 +306,14 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82,
+      lineNumber: 81,
       columnNumber: 11
     }
   }, "HOME")), __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86,
+      lineNumber: 85,
       columnNumber: 9
     }
   }, __jsx(_NewGameButton__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -324,7 +324,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87,
+      lineNumber: 86,
       columnNumber: 11
     }
   }))), version === 'undercover' ? __jsx("div", {
@@ -332,7 +332,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91,
+      lineNumber: 90,
       columnNumber: 11
     }
   }, "CODENAMES: undercover") : __jsx("div", {
@@ -340,7 +340,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92,
+      lineNumber: 91,
       columnNumber: 11
     }
   }, "CODENAMES"), loading && __jsx("div", {
@@ -348,14 +348,14 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95,
+      lineNumber: 94,
       columnNumber: 9
     }
   }, __jsx(_Loader__WEBPACK_IMPORTED_MODULE_9__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96,
+      lineNumber: 95,
       columnNumber: 11
     }
   })), Array.isArray(boardMap) && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("div", {
@@ -364,7 +364,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100,
+      lineNumber: 99,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -372,7 +372,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101,
+      lineNumber: 100,
       columnNumber: 11
     }
   }, __jsx("div", {
@@ -380,7 +380,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102,
+      lineNumber: 101,
       columnNumber: 13
     }
   }, __jsx("input", {
@@ -391,7 +391,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103,
+      lineNumber: 102,
       columnNumber: 15
     }
   }), __jsx("button", {
@@ -400,7 +400,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104,
+      lineNumber: 103,
       columnNumber: 15
     }
   }, "Copy Link")))), __jsx("div", {
@@ -408,7 +408,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 110,
+      lineNumber: 109,
       columnNumber: 9
     }
   }, __jsx(_components_Toggle__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -418,7 +418,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 111,
+      lineNumber: 110,
       columnNumber: 11
     }
   })), __jsx(_components_ScoreBoard__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -427,7 +427,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 113,
+      lineNumber: 112,
       columnNumber: 9
     }
   }), __jsx(_Board__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -437,14 +437,14 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 114,
+      lineNumber: 113,
       columnNumber: 9
     }
   })), __jsx("style", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 116,
+      lineNumber: 115,
       columnNumber: 7
     }
   }, `
@@ -476,6 +476,9 @@ function Index() {
           flex-direction: column;
           justify-content: center;
         }
+        .board-container {
+          margin-bottom: 50px;
+        }
         .loader-container {
           justify-self: center;
           align-self: center;
@@ -491,6 +494,7 @@ function Index() {
           align-self: center;
           font-size: 20px;
           margin: 20px 0;
+          cursor: pointer;
         }
       `));
 }
@@ -726,8 +730,8 @@ function Layout({
           font-weight: 600;
           font-size: 14px;
           letter-spacing: 0.5px;
-          margin-top: 10px;
-          padding: 30px 0;
+          border-top: 1px solid white;
+          padding: 40px 0;
         }
       `));
 }
@@ -1152,7 +1156,7 @@ function ScoreBoard({
         max-width: 100vw;
         color: white;
         font-weight: 600;
-        margin: 0 auto;
+        margin: 0 auto 15px;
         justify-self: center;
         align-self: center;
       }

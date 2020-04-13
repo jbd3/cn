@@ -75,7 +75,7 @@ export default function Index() {
   if (typeof boardMap === 'string') Router.push('/404')
 
   return (
-    <main>
+    <main className='board-container'>
       <header>
         <Link href='/'>
           <div className="home-button">
@@ -140,6 +140,9 @@ export default function Index() {
           display: flex;
           flex-direction: column;
           justify-content: center;
+        }
+        .board-container {
+          margin-bottom: 50px;
         }
         .loader-container {
           justify-self: center;

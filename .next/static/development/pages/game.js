@@ -121,7 +121,6 @@ function Index() {
   }),
       data = _useSWR.data;
 
-  console.log('data: ', data);
   if ((data === null || data === void 0 ? void 0 : data.status) === 404) next_router__WEBPACK_IMPORTED_MODULE_3___default.a.push('/404');
   var boardMap = data === null || data === void 0 ? void 0 : data.boardMap;
   var scoreBoard = data === null || data === void 0 ? void 0 : data.scoreBoard;
@@ -190,17 +189,18 @@ function Index() {
 
   if (typeof boardMap === 'string') next_router__WEBPACK_IMPORTED_MODULE_3___default.a.push('/404');
   return __jsx("main", {
+    className: "board-container",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79,
+      lineNumber: 78,
       columnNumber: 5
     }
   }, __jsx("header", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80,
+      lineNumber: 79,
       columnNumber: 7
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
@@ -208,7 +208,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81,
+      lineNumber: 80,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -216,14 +216,14 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82,
+      lineNumber: 81,
       columnNumber: 11
     }
   }, "HOME")), __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86,
+      lineNumber: 85,
       columnNumber: 9
     }
   }, __jsx(_NewGameButton__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -234,7 +234,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87,
+      lineNumber: 86,
       columnNumber: 11
     }
   }))), version === 'undercover' ? __jsx("div", {
@@ -242,7 +242,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91,
+      lineNumber: 90,
       columnNumber: 11
     }
   }, "CODENAMES: undercover") : __jsx("div", {
@@ -250,7 +250,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92,
+      lineNumber: 91,
       columnNumber: 11
     }
   }, "CODENAMES"), loading && __jsx("div", {
@@ -258,14 +258,14 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95,
+      lineNumber: 94,
       columnNumber: 9
     }
   }, __jsx(_Loader__WEBPACK_IMPORTED_MODULE_9__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96,
+      lineNumber: 95,
       columnNumber: 11
     }
   })), Array.isArray(boardMap) && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("div", {
@@ -276,7 +276,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100,
+      lineNumber: 99,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -284,7 +284,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101,
+      lineNumber: 100,
       columnNumber: 11
     }
   }, __jsx("div", {
@@ -292,7 +292,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102,
+      lineNumber: 101,
       columnNumber: 13
     }
   }, __jsx("input", {
@@ -303,7 +303,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103,
+      lineNumber: 102,
       columnNumber: 15
     }
   }), __jsx("button", {
@@ -312,7 +312,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104,
+      lineNumber: 103,
       columnNumber: 15
     }
   }, "Copy Link")))), __jsx("div", {
@@ -320,7 +320,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 110,
+      lineNumber: 109,
       columnNumber: 9
     }
   }, __jsx(_components_Toggle__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -332,7 +332,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 111,
+      lineNumber: 110,
       columnNumber: 11
     }
   })), __jsx(_components_ScoreBoard__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -341,7 +341,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 113,
+      lineNumber: 112,
       columnNumber: 9
     }
   }), __jsx(_Board__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -351,17 +351,17 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 114,
+      lineNumber: 113,
       columnNumber: 9
     }
   })), __jsx("style", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 116,
+      lineNumber: 115,
       columnNumber: 7
     }
-  }, "\n        .game-title {\n          font-family: futura;\n          font-size: 45px;\n          margin-top: 20px;\n          align-self: center;\n          color: white;\n          text-align: center;\n        }\n        .scoreBoard {\n          display: flex;\n          align-content: space-between;\n          align-self: center;\n          border: 1px solid white;\n          border-radius: 5px;\n          padding: 10px;\n          color: white;\n          font-weight: 500;\n        }\n        .score {\n          margin: 0 10px;\n          color: white;\n        }\n        main {\n          width: 100%;\n          display: flex;\n          flex-direction: column;\n          justify-content: center;\n        }\n        .loader-container {\n          justify-self: center;\n          align-self: center;\n        }\n        .toggleContainer {\n          width: 160px;\n          align-self: center;\n          margin: 20px 0;\n        }\n        .link-container {\n          width: 98vw;\n          max-width: 400px;\n          align-self: center;\n          font-size: 20px;\n          margin: 20px 0;\n        }\n      "));
+  }, "\n        .game-title {\n          font-family: futura;\n          font-size: 45px;\n          margin-top: 20px;\n          align-self: center;\n          color: white;\n          text-align: center;\n        }\n        .scoreBoard {\n          display: flex;\n          align-content: space-between;\n          align-self: center;\n          border: 1px solid white;\n          border-radius: 5px;\n          padding: 10px;\n          color: white;\n          font-weight: 500;\n        }\n        .score {\n          margin: 0 10px;\n          color: white;\n        }\n        main {\n          width: 100%;\n          display: flex;\n          flex-direction: column;\n          justify-content: center;\n        }\n        .board-container {\n          margin-bottom: 50px;\n        }\n        .loader-container {\n          justify-self: center;\n          align-self: center;\n        }\n        .toggleContainer {\n          width: 160px;\n          align-self: center;\n          margin: 20px 0;\n        }\n        .link-container {\n          width: 98vw;\n          max-width: 400px;\n          align-self: center;\n          font-size: 20px;\n          margin: 20px 0;\n          cursor: pointer;\n        }\n      "));
 }
 
 /***/ }),
@@ -566,7 +566,7 @@ function Layout(_ref) {
       lineNumber: 6,
       columnNumber: 7
     }
-  }, "\n        .layout {\n          background: rgb(253,220,0);\n          background: radial-gradient(circle, rgba(253,220,0,1) 0%, rgba(240,135,41,1) 44%, rgba(126,18,75,1) 100%);\n        }\n        header {\n          display:flex;\n          justify-content: space-between;\n          padding: 20px;\n          border-bottom: 1px solid white;\n        }\n        .home-button {\n          display: flex;\n          justify-content: center;\n          align-items: center;\n          color: white;\n          font-weight: 600;\n          cursor: pointer;\n        }\n        footer {\n          display: flex;\n          justify-content: center;\n          color: #ffffff36;\n          font-weight: 600;\n          font-size: 14px;\n          letter-spacing: 0.5px;\n          margin-top: 10px;\n          padding: 30px 0;\n        }\n      "));
+  }, "\n        .layout {\n          background: rgb(253,220,0);\n          background: radial-gradient(circle, rgba(253,220,0,1) 0%, rgba(240,135,41,1) 44%, rgba(126,18,75,1) 100%);\n        }\n        header {\n          display:flex;\n          justify-content: space-between;\n          padding: 20px;\n          border-bottom: 1px solid white;\n        }\n        .home-button {\n          display: flex;\n          justify-content: center;\n          align-items: center;\n          color: white;\n          font-weight: 600;\n          cursor: pointer;\n        }\n        footer {\n          display: flex;\n          justify-content: center;\n          color: #ffffff36;\n          font-weight: 600;\n          font-size: 14px;\n          letter-spacing: 0.5px;\n          border-top: 1px solid white;\n          padding: 40px 0;\n        }\n      "));
 }
 
 /***/ }),
@@ -950,7 +950,7 @@ function ScoreBoard(_ref) {
       lineNumber: 52,
       columnNumber: 5
     }
-  }, " ", "\n      .score-board {\n        display: flex;\n        flex-direction: column;\n        width: 450px;\n        max-width: 100vw;\n        color: white;\n        font-weight: 600;\n        margin: 0 auto;\n        justify-self: center;\n        align-self: center;\n      }\n      .team {\n        display: flex;\n        flex-direction: row;\n        margin-bottom: 5px;\n      }\n      .arrow {\n        flex-basis: 40%;\n        display: flex;\n        font-size: 15px;\n        justify-content: flex-end;\n        align-items: center;\n      }\n      .color-box {\n        flex-basis: 10%;\n        text-align: center;\n        padding: 5px; 2px;\n        margin: 0 10px;\n        border-radius: 5px;\n      }\n      .blue {\n        background: #0D659E;\n        border: 4px solid #005487;\n      }\n      .red {\n        background: #E03222;\n        border: 4px solid #CA0A05;\n      }\n      .green {\n        background: #12B142;\n        border: 4px solid #009526;\n      }\n      .final {\n        flex-basis: 100%;\n        font-size: 40px;\n        text-align: center;\n      }\n      .green-status {\n        flex-basis: 100%;\n        font-size: 30px;\n        text-align: center;\n      }\n      .team.green-team {\n        flex-basis: 100%;\n        display: flex;\n        justify-content: center;\n      }\n      .cards-remaining {\n        flex-basis: 60%;\n        display: flex;\n        align-items: center;\n      }\n      @media screen and (min-width: 480px) {\n        .arrow {\n          font-size: 20px;\n        }\n        .cards-remaining {\n          font-size: 20px;\n        }\n      }\n    "));
+  }, " ", "\n      .score-board {\n        display: flex;\n        flex-direction: column;\n        width: 450px;\n        max-width: 100vw;\n        color: white;\n        font-weight: 600;\n        margin: 0 auto 15px;\n        justify-self: center;\n        align-self: center;\n      }\n      .team {\n        display: flex;\n        flex-direction: row;\n        margin-bottom: 5px;\n      }\n      .arrow {\n        flex-basis: 40%;\n        display: flex;\n        font-size: 15px;\n        justify-content: flex-end;\n        align-items: center;\n      }\n      .color-box {\n        flex-basis: 10%;\n        text-align: center;\n        padding: 5px; 2px;\n        margin: 0 10px;\n        border-radius: 5px;\n      }\n      .blue {\n        background: #0D659E;\n        border: 4px solid #005487;\n      }\n      .red {\n        background: #E03222;\n        border: 4px solid #CA0A05;\n      }\n      .green {\n        background: #12B142;\n        border: 4px solid #009526;\n      }\n      .final {\n        flex-basis: 100%;\n        font-size: 40px;\n        text-align: center;\n      }\n      .green-status {\n        flex-basis: 100%;\n        font-size: 30px;\n        text-align: center;\n      }\n      .team.green-team {\n        flex-basis: 100%;\n        display: flex;\n        justify-content: center;\n      }\n      .cards-remaining {\n        flex-basis: 60%;\n        display: flex;\n        align-items: center;\n      }\n      @media screen and (min-width: 480px) {\n        .arrow {\n          font-size: 20px;\n        }\n        .cards-remaining {\n          font-size: 20px;\n        }\n      }\n    "));
 }
 
 /***/ }),
