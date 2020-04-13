@@ -359,7 +359,7 @@ function Index() {
       lineNumber: 113,
       columnNumber: 7
     }
-  }, "\n        .game-title {\n          font-family: futura;\n          font-size: 45px;\n          margin-top: 20px;\n          align-self: center;\n          color: white;\n        }\n        .scoreBoard {\n          display: flex;\n          align-content: space-between;\n          align-self: center;\n          border: 1px solid white;\n          border-radius: 5px;\n          padding: 10px;\n          color: white;\n          font-weight: 500;\n        }\n        .score {\n          margin: 0 10px;\n          color: white;\n        }\n        main {\n          width: 100%;\n          display: flex;\n          flex-direction: column;\n          justify-content: center;\n        }\n        .loader-container {\n          justify-self: center;\n          align-self: center;\n        }\n        .toggleContainer {\n          width: 160px;\n          align-self: center;\n          margin: 20px 0;\n        }\n        .link-container {\n          width: 98vw;\n          max-width: 400px;\n          align-self: center;\n          font-size: 20px;\n          margin: 20px 0;\n        }\n      "));
+  }, "\n        .game-title {\n          font-family: futura;\n          font-size: 45px;\n          margin-top: 20px;\n          align-self: center;\n          color: white;\n          text-align: center;\n        }\n        .scoreBoard {\n          display: flex;\n          align-content: space-between;\n          align-self: center;\n          border: 1px solid white;\n          border-radius: 5px;\n          padding: 10px;\n          color: white;\n          font-weight: 500;\n        }\n        .score {\n          margin: 0 10px;\n          color: white;\n        }\n        main {\n          width: 100%;\n          display: flex;\n          flex-direction: column;\n          justify-content: center;\n        }\n        .loader-container {\n          justify-self: center;\n          align-self: center;\n        }\n        .toggleContainer {\n          width: 160px;\n          align-self: center;\n          margin: 20px 0;\n        }\n        .link-container {\n          width: 98vw;\n          max-width: 400px;\n          align-self: center;\n          font-size: 20px;\n          margin: 20px 0;\n        }\n      "));
 }
 
 /***/ }),
@@ -549,21 +549,22 @@ function Layout(_ref) {
       lineNumber: 5,
       columnNumber: 7
     }
-  }, __jsx("p", {
+  }, __jsx("a", {
+    href: "https://paypal.me/bknyjake",
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 5,
       columnNumber: 15
     }
-  }, "Copyright Ignored 2020")), __jsx("style", {
+  }, "donate")), __jsx("style", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 6,
       columnNumber: 7
     }
-  }, "\n        .layout {\n          background: rgb(253,220,0);\n          background: radial-gradient(circle, rgba(253,220,0,1) 0%, rgba(240,135,41,1) 44%, rgba(126,18,75,1) 100%);\n        }\n        header {\n          display:flex;\n          justify-content: space-between;\n          padding: 20px;\n          border-bottom: 1px solid white;\n        }\n        .home-button {\n          display: flex;\n          justify-content: center;\n          align-items: center;\n          color: white;\n          font-weight: 600;\n          cursor: pointer;\n        }\n        footer {\n          display: flex;\n          justify-content: center;\n          color: white;\n          font-weight: 600;\n          font-height: 8px;\n          margin-top: 10px;\n          padding: 30px 0;\n        }\n      "));
+  }, "\n        .layout {\n          background: rgb(253,220,0);\n          background: radial-gradient(circle, rgba(253,220,0,1) 0%, rgba(240,135,41,1) 44%, rgba(126,18,75,1) 100%);\n        }\n        header {\n          display:flex;\n          justify-content: space-between;\n          padding: 20px;\n          border-bottom: 1px solid white;\n        }\n        .home-button {\n          display: flex;\n          justify-content: center;\n          align-items: center;\n          color: white;\n          font-weight: 600;\n          cursor: pointer;\n        }\n        footer {\n          display: flex;\n          justify-content: center;\n          color: #ffffff36;\n          font-weight: 600;\n          font-size: 14px;\n          letter-spacing: 0.5px;\n          margin-top: 10px;\n          padding: 30px 0;\n        }\n      "));
 }
 
 /***/ }),

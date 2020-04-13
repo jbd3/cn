@@ -452,6 +452,7 @@ function Index() {
           margin-top: 20px;
           align-self: center;
           color: white;
+          text-align: center;
         }
         .scoreBoard {
           display: flex;
@@ -682,14 +683,15 @@ function Layout({
       lineNumber: 5,
       columnNumber: 7
     }
-  }, __jsx("p", {
+  }, __jsx("a", {
+    href: "https://paypal.me/bknyjake",
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 5,
       columnNumber: 15
     }
-  }, "Copyright Ignored 2020")), __jsx("style", {
+  }, "donate")), __jsx("style", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
@@ -718,9 +720,10 @@ function Layout({
         footer {
           display: flex;
           justify-content: center;
-          color: white;
+          color: #ffffff36;
           font-weight: 600;
-          font-height: 8px;
+          font-size: 14px;
+          letter-spacing: 0.5px;
           margin-top: 10px;
           padding: 30px 0;
         }

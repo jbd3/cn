@@ -2,7 +2,7 @@ export default function Layout({ children }) {
   return (
     <main className="layout">
       {children}
-      <footer><p>Copyright Ignored 2020</p></footer>
+      <footer><a href='https://paypal.me/bknyjake'>donate</a></footer>
       <style>{`
         .layout {
           background: rgb(253,220,0);
@@ -25,9 +25,10 @@ export default function Layout({ children }) {
         footer {
           display: flex;
           justify-content: center;
-          color: white;
+          color: #ffffff36;
           font-weight: 600;
-          font-height: 8px;
+          font-size: 14px;
+          letter-spacing: 0.5px;
           margin-top: 10px;
           padding: 30px 0;
         }
