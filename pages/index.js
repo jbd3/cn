@@ -25,7 +25,7 @@ export default function Index() {
           </div>
         </Link>
         <div>
-          <NewGameButton solid={false} setIsCodeMaster={null} />
+          <NewGameButton solid={false} setIsCodeMaster={null} version={version} />
         </div>
       </header>
       <main className="home">
