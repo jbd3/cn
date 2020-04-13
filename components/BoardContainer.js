@@ -117,6 +117,7 @@ export default function Index() {
           margin-top: 20px;
           align-self: center;
           color: white;
+          text-align: center;
         }
         .scoreBoard {
           display: flex;
