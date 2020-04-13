@@ -29,8 +29,8 @@ export default function Layout({ children }) {
           font-weight: 600;
           font-size: 14px;
           letter-spacing: 0.5px;
-          margin-top: 10px;
-          padding: 30px 0;
+          border-top: 1px solid white;
+          padding: 40px 0;
         }
       `}</style>
     </main>

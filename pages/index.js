@@ -86,7 +86,6 @@ export default function Index() {
               display: flex;
               flex-direction: column;
               align-items: center;
-              border-bottom: solid 1px white;
             }
             .hero {
               width: 100%;
