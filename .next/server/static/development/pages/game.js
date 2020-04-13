@@ -194,6 +194,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+
 function fetcher(url) {
   return isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_2___default()(url).then(r => r.json());
 }
@@ -206,17 +207,17 @@ function Index() {
     token
   } = query;
   const {
-    data,
-    error
+    data
   } = swr__WEBPACK_IMPORTED_MODULE_1___default()(`/api/games?token=${token}`, fetcher, {
     refreshInterval: 100
   });
+  console.log('data: ', data);
+  if ((data === null || data === void 0 ? void 0 : data.status) === 404) next_router__WEBPACK_IMPORTED_MODULE_3___default.a.push('/404');
   let boardMap = data === null || data === void 0 ? void 0 : data.boardMap;
   let scoreBoard = data === null || data === void 0 ? void 0 : data.scoreBoard;
   let wordsList = data === null || data === void 0 ? void 0 : data.wordsList;
   let version = data === null || data === void 0 ? void 0 : data.version;
   const loading = !boardMap;
-  if (error) boardMap = 'Failed to fetch game data.';
   const {
     0: isCodeMaster,
     1: setIsCodeMaster
@@ -277,18 +278,19 @@ function Index() {
     });
   }
 
+  if (typeof boardMap === 'string') next_router__WEBPACK_IMPORTED_MODULE_3___default.a.push('/404');
   return __jsx("main", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76,
+      lineNumber: 79,
       columnNumber: 5
     }
   }, __jsx("header", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77,
+      lineNumber: 80,
       columnNumber: 7
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
@@ -296,7 +298,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 78,
+      lineNumber: 81,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -304,14 +306,14 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79,
+      lineNumber: 82,
       columnNumber: 11
     }
   }, "HOME")), __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83,
+      lineNumber: 86,
       columnNumber: 9
     }
   }, __jsx(_NewGameButton__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -322,7 +324,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84,
+      lineNumber: 87,
       columnNumber: 11
     }
   }))), version === 'undercover' ? __jsx("div", {
@@ -330,7 +332,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88,
+      lineNumber: 91,
       columnNumber: 11
     }
   }, "CODENAMES: undercover") : __jsx("div", {
@@ -338,7 +340,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89,
+      lineNumber: 92,
       columnNumber: 11
     }
   }, "CODENAMES"), loading && __jsx("div", {
@@ -346,23 +348,23 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92,
+      lineNumber: 95,
       columnNumber: 9
     }
   }, __jsx(_Loader__WEBPACK_IMPORTED_MODULE_9__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93,
+      lineNumber: 96,
       columnNumber: 11
     }
-  })), boardMap && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("div", {
+  })), Array.isArray(boardMap) && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("div", {
     className: "link-container",
     onClick: () => copyToClipboard(),
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 97,
+      lineNumber: 100,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -370,7 +372,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 98,
+      lineNumber: 101,
       columnNumber: 11
     }
   }, __jsx("div", {
@@ -378,7 +380,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99,
+      lineNumber: 102,
       columnNumber: 13
     }
   }, __jsx("input", {
@@ -389,7 +391,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100,
+      lineNumber: 103,
       columnNumber: 15
     }
   }), __jsx("button", {
@@ -398,7 +400,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101,
+      lineNumber: 104,
       columnNumber: 15
     }
   }, "Copy Link")))), __jsx("div", {
@@ -406,7 +408,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 107,
+      lineNumber: 110,
       columnNumber: 9
     }
   }, __jsx(_components_Toggle__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -416,7 +418,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108,
+      lineNumber: 111,
       columnNumber: 11
     }
   })), __jsx(_components_ScoreBoard__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -425,7 +427,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 110,
+      lineNumber: 113,
       columnNumber: 9
     }
   }), __jsx(_Board__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -435,14 +437,14 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 111,
+      lineNumber: 114,
       columnNumber: 9
     }
   })), __jsx("style", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 113,
+      lineNumber: 116,
       columnNumber: 7
     }
   }, `

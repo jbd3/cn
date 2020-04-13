@@ -1,6 +1,7 @@
 import useSWR from 'swr';
 import fetch from 'isomorphic-unfetch'
 import { useRouter } from 'next/router';
+import Router from 'next/router'
 import { useState } from 'react';
 import Board from './Board';
 import Toggle from '../components/Toggle';
@@ -16,13 +17,14 @@ function fetcher(url) {
 export default function Index() {
   const { query } = useRouter();
   const { token } = query;
-  const { data, error } = useSWR(`/api/games?token=${token}`, fetcher, { refreshInterval: 100 });
+  const { data } = useSWR(`/api/games?token=${token}`, fetcher, { refreshInterval: 100 });
+  console.log('data: ', data);
+  if (data?.status === 404) Router.push('/404')
   let boardMap = data?.boardMap;
   let scoreBoard = data?.scoreBoard;
   let wordsList = data?.wordsList;
   let version = data?.version;
   const loading = !boardMap;
-  if (error) boardMap = 'Failed to fetch game data.';
 
   const [isCodeMaster, setIsCodeMaster] = useState(false);
 
@@ -71,6 +73,7 @@ export default function Index() {
       })
     })
   }
+  if (typeof boardMap === 'string') Router.push('/404')
 
   return (
     <main>
@@ -93,7 +96,7 @@ export default function Index() {
           <Loader />
         </div>
       )}
-      {boardMap && (<>
+      {Array.isArray(boardMap) && (<>
         <div className="link-container" onClick={() => copyToClipboard()}>
           <div className="mb-2 token-form">
             <div className="flex bg-gray-100 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">

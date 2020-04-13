@@ -13,10 +13,15 @@ handler.get(async (req, res) => {
   const { token } = req.query;
   try {
     const game = await req.db.collection('games').findOne({ token });
-    res.json(game);
+    if (!game) {
+      return res.status(404).json({
+        status: 404,
+        message: `Game Token ${token} not found`,
+      });
+    }
+    return res.status(200).json(game);
   } catch (err) {
-    res.status(500).send();
-    throw new Error(`Error loadin game with token: ${token}: ${err}`);
+    return res.status(500).json({ status: 500, message: `Error loadin game with token: ${token}: ${err}` });
   }
 });
 
@@ -100,8 +105,7 @@ handler.post(async (req, res) => {
     await req.db.collection('games').insertOne(game);
     res.json(token);
   } catch (err) {
-    res.status(500).send();
-    throw new Error(`Error adding new game: ${err}`);
+    res.status(500).send({ error: `Error adding new game: ${err}` });
   }
 });
 
@@ -150,8 +154,7 @@ handler.put(async (req, res) => {
     await req.db.collection('games').findOneAndUpdate({ token }, { $set: { boardMap, scoreBoard } }, { returnOriginal: false });
     res.send(200);
   } catch (err) {
-    res.status(500).send();
-    throw new Error(`Error on guess: ${err}`);
+    res.status(500).send({ error: `on guess: ${err}` });
   }
 });
 

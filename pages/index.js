@@ -5,13 +5,15 @@ import { useState } from 'react';
 import NewGameButton from '../components/NewGameButton'
 
 import Link from 'next/link'
+import Router from 'next/router'
 
 export default function Index() {
 
   const [officialWords, setOfficialWords] = useState(true);
   // const [isGreenMode, setIsGreenMode] = useState(false);
   const [isUndercover, setIsUndercover] = useState(false);
-
+  const [token, updateToken] = useState('');
+  console.log('token: ', token);
   let version = 'classic';
   if (!officialWords) version = 'randomWords';
   if (isUndercover) version = 'undercover';
@@ -49,8 +51,17 @@ export default function Index() {
         <NewGameButton solid version={version} />
         <div className="mb-4 token-form">
           <div className="flex bg-gray-100 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
-            <input className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Current game token" />
-            <button className="btn-teal" type="button">
+            <input
+              className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+              type="text"
+              placeholder="Current game token"
+              onChange={(e) => updateToken(e.target.value)}
+              value={token}
+            />
+            <button className="btn-teal" type="button" onClick={(e) => {
+              e.preventDefault()
+              Router.push(`/game?token=${token}`)
+            }}>
               Submit
             </button>
           </div>

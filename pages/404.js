@@ -1,5 +1,4 @@
 import Layout from '../components/Layout'
-import Toggle from '../components/Toggle'
 import { useState } from 'react';
 import NewGameButton from '../components/NewGameButton'
 
@@ -48,7 +47,7 @@ export default function Index() {
             .hero {
               width: 100%;
               padding: 20px;
-              font-size: 12vw;
+              font-size: 6vw;
               color: white;
               display: flex;
               justify-content: center;
