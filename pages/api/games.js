@@ -2,6 +2,7 @@ import nextConnect from 'next-connect';
 import randomWords from 'random-words';
 import middleware from '../../database';
 import words from '../../words.json';
+import undercoverWords from '../../undercoverWords.json';
 
 const handler = nextConnect();
 
@@ -21,16 +22,30 @@ handler.get(async (req, res) => {
 
 // Create new game
 handler.post(async (req, res) => {
-  const { token, officialWords } = req.body;
+  const { token, version, wordsListLastGame } = req.body;
   const randomInt = (min, max) => Math.round(min + (Math.random() * (max - min)));
 
-  const doNotInclude = {};
-  const getWord = ({ isOfficial }) => {
-    let word = isOfficial ? words.list[randomInt(0, words.list.length - 1)] : randomWords();
-    while (doNotInclude[word]) {
-      word = isOfficial ? words.list[randomInt(0, words.list.length - 1)] : randomWords();
+  const wordsList = { ...wordsListLastGame } || {};
+  const getWord = () => {
+    const findNewWord = () => {
+      let word;
+      switch (version) {
+        case 'randomWords':
+          word = randomWords();
+          break;
+        case 'undercover':
+          word = undercoverWords.list[randomInt(0, undercoverWords.list.length - 1)];
+          break;
+        default:
+          word = words.list[randomInt(0, words.list.length - 1)]; //classic
+      }
+      return word;
+    };
+    let word = findNewWord();
+    while (wordsList[word]) {
+      word = findNewWord();
     }
-    doNotInclude[word] = true;
+    wordsList[word] = true;
     return word;
   };
 
@@ -40,7 +55,7 @@ handler.post(async (req, res) => {
     const row = [];
     for (let j = 0; j < 5; j++) {
       row.push({
-        word: officialWords ? getWord({ isOfficial: true }) : getWord({ isOfficial: false }),
+        word: getWord(),
         team: 0,
         isRevealed: false,
       });
@@ -69,6 +84,8 @@ handler.post(async (req, res) => {
   const game = {
     token,
     boardMap,
+    wordsList,
+    version,
     scoreBoard: {
       blue: gameStatus === 1 ? 9 : 8,
       red: gameStatus === 2 ? 9 : 8,

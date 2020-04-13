@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -213,6 +213,8 @@ function Index() {
   });
   let boardMap = data === null || data === void 0 ? void 0 : data.boardMap;
   let scoreBoard = data === null || data === void 0 ? void 0 : data.scoreBoard;
+  let wordsList = data === null || data === void 0 ? void 0 : data.wordsList;
+  let version = data === null || data === void 0 ? void 0 : data.version;
   const loading = !boardMap;
   if (error) boardMap = 'Failed to fetch game data.';
   const {
@@ -279,14 +281,14 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74,
+      lineNumber: 76,
       columnNumber: 5
     }
   }, __jsx("header", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75,
+      lineNumber: 77,
       columnNumber: 7
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
@@ -294,7 +296,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76,
+      lineNumber: 78,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -302,46 +304,56 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77,
+      lineNumber: 79,
       columnNumber: 11
     }
   }, "HOME")), __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81,
+      lineNumber: 83,
       columnNumber: 9
     }
   }, __jsx(_NewGameButton__WEBPACK_IMPORTED_MODULE_8__["default"], {
     solid: false,
     setIsCodeMaster: setIsCodeMaster,
+    version: version,
+    wordsList: wordsList,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82,
+      lineNumber: 84,
       columnNumber: 11
     }
-  }))), __jsx("div", {
+  }))), version === 'undercover' ? __jsx("div", {
     className: "game-title",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85,
-      columnNumber: 7
+      lineNumber: 88,
+      columnNumber: 11
+    }
+  }, "CODENAMES: undercover") : __jsx("div", {
+    className: "game-title",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 89,
+      columnNumber: 11
     }
   }, "CODENAMES"), loading && __jsx("div", {
     className: "loader-container",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87,
+      lineNumber: 92,
       columnNumber: 9
     }
   }, __jsx(_Loader__WEBPACK_IMPORTED_MODULE_9__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88,
+      lineNumber: 93,
       columnNumber: 11
     }
   })), boardMap && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("div", {
@@ -350,7 +362,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92,
+      lineNumber: 97,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -358,7 +370,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93,
+      lineNumber: 98,
       columnNumber: 11
     }
   }, __jsx("div", {
@@ -366,7 +378,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94,
+      lineNumber: 99,
       columnNumber: 13
     }
   }, __jsx("input", {
@@ -377,7 +389,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95,
+      lineNumber: 100,
       columnNumber: 15
     }
   }), __jsx("button", {
@@ -386,7 +398,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96,
+      lineNumber: 101,
       columnNumber: 15
     }
   }, "Copy Link")))), __jsx("div", {
@@ -394,7 +406,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102,
+      lineNumber: 107,
       columnNumber: 9
     }
   }, __jsx(_components_Toggle__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -404,7 +416,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103,
+      lineNumber: 108,
       columnNumber: 11
     }
   })), __jsx(_components_ScoreBoard__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -413,7 +425,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105,
+      lineNumber: 110,
       columnNumber: 9
     }
   }), __jsx(_Board__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -423,14 +435,14 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106,
+      lineNumber: 111,
       columnNumber: 9
     }
   })), __jsx("style", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108,
+      lineNumber: 113,
       columnNumber: 7
     }
   }, `
@@ -843,9 +855,9 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 function NewGameButton({
   solid,
-  officialWords = true,
   setIsCodeMaster = null,
-  isGreenMode = false
+  version = 'classic',
+  wordsListLastGame = {}
 }) {
   const newGame = () => {
     if (setIsCodeMaster) setIsCodeMaster(false);
@@ -857,18 +869,16 @@ function NewGameButton({
     const token = `${random_words__WEBPACK_IMPORTED_MODULE_1___default()()}-${random_words__WEBPACK_IMPORTED_MODULE_1___default()()}-${randomInt(100, 999)}`;
     const body = JSON.stringify({
       token,
-      officialWords,
-      green: isGreenMode
+      version,
+      wordsListLastGame
     });
-    next_router__WEBPACK_IMPORTED_MODULE_3___default.a.push(`/game?token=${token}`);
     isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_2___default()('/api/games', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body
-    }) // .then(() => Router.push(`/game?token=${token}`))
-    .catch(err => {
+    }).then(() => next_router__WEBPACK_IMPORTED_MODULE_3___default.a.push(`/game?token=${token}`)).catch(err => {
       console.error('Error adding new game: ', err);
       next_router__WEBPACK_IMPORTED_MODULE_3___default.a.push(`/404`);
     });
@@ -880,7 +890,7 @@ function NewGameButton({
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33,
+      lineNumber: 32,
       columnNumber: 5
     }
   }, "New Game");
@@ -1138,6 +1148,8 @@ function ScoreBoard({
         color: white;
         font-weight: 600;
         margin: 0 auto;
+        justify-self: center;
+        align-self: center;
       }
       .team {
         display: flex;
@@ -3085,7 +3097,7 @@ function Game() {
 
 /***/ }),
 
-/***/ 4:
+/***/ 5:
 /*!*****************************!*\
   !*** multi ./pages/game.js ***!
   \*****************************/

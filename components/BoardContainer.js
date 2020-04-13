@@ -19,6 +19,8 @@ export default function Index() {
   const { data, error } = useSWR(`/api/games?token=${token}`, fetcher, { refreshInterval: 100 });
   let boardMap = data?.boardMap;
   let scoreBoard = data?.scoreBoard;
+  let wordsList = data?.wordsList;
+  let version = data?.version;
   const loading = !boardMap;
   if (error) boardMap = 'Failed to fetch game data.';
 
@@ -79,10 +81,13 @@ export default function Index() {
           </div>
         </Link>
         <div>
-          <NewGameButton solid={false} setIsCodeMaster={setIsCodeMaster} />
+          <NewGameButton solid={false} setIsCodeMaster={setIsCodeMaster} version={version} wordsList={wordsList} />
         </div>
       </header>
-      <div className='game-title'>CODENAMES</div>
+      {version === 'undercover'
+        ? <div className='game-title'>CODENAMES: undercover</div>
+        : <div className='game-title'>CODENAMES</div>
+      }
       {loading && (
         <div className="loader-container">
           <Loader />

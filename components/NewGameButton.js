@@ -3,7 +3,7 @@ import randomWords from 'random-words'
 import fetch from 'isomorphic-unfetch'
 import Router from 'next/router'
 
-export default function NewGameButton({ solid, officialWords = true, setIsCodeMaster = null, isGreenMode = false }) {
+export default function NewGameButton({ solid, setIsCodeMaster = null, version = 'classic', wordsListLastGame = {} }) {
   const newGame = () => {
     if (setIsCodeMaster) setIsCodeMaster(false);
     const randomInt = (min, max) => {
@@ -12,10 +12,9 @@ export default function NewGameButton({ solid, officialWords = true, setIsCodeMa
     const token = `${randomWords()}-${randomWords()}-${randomInt(100, 999)}`;
     const body = JSON.stringify({
       token,
-      officialWords,
-      green: isGreenMode,
+      version,
+      wordsListLastGame,
     })
-    Router.push(`/game?token=${token}`);
     fetch('/api/games', {
       method: 'POST',
       headers: {
@@ -23,7 +22,7 @@ export default function NewGameButton({ solid, officialWords = true, setIsCodeMa
       },
       body,
     })
-      // .then(() => Router.push(`/game?token=${token}`))
+      .then(() => Router.push(`/game?token=${token}`))
       .catch(err => {
         console.error('Error adding new game: ', err)
         Router.push(`/404`);

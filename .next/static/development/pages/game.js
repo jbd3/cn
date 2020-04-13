@@ -123,6 +123,8 @@ function Index() {
 
   var boardMap = data === null || data === void 0 ? void 0 : data.boardMap;
   var scoreBoard = data === null || data === void 0 ? void 0 : data.scoreBoard;
+  var wordsList = data === null || data === void 0 ? void 0 : data.wordsList;
+  var version = data === null || data === void 0 ? void 0 : data.version;
   var loading = !boardMap;
   if (error) boardMap = 'Failed to fetch game data.';
 
@@ -189,14 +191,14 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74,
+      lineNumber: 76,
       columnNumber: 5
     }
   }, __jsx("header", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75,
+      lineNumber: 77,
       columnNumber: 7
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_7___default.a, {
@@ -204,7 +206,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76,
+      lineNumber: 78,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -212,46 +214,56 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77,
+      lineNumber: 79,
       columnNumber: 11
     }
   }, "HOME")), __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81,
+      lineNumber: 83,
       columnNumber: 9
     }
   }, __jsx(_NewGameButton__WEBPACK_IMPORTED_MODULE_8__["default"], {
     solid: false,
     setIsCodeMaster: setIsCodeMaster,
+    version: version,
+    wordsList: wordsList,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82,
+      lineNumber: 84,
       columnNumber: 11
     }
-  }))), __jsx("div", {
+  }))), version === 'undercover' ? __jsx("div", {
     className: "game-title",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85,
-      columnNumber: 7
+      lineNumber: 88,
+      columnNumber: 11
+    }
+  }, "CODENAMES: undercover") : __jsx("div", {
+    className: "game-title",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 89,
+      columnNumber: 11
     }
   }, "CODENAMES"), loading && __jsx("div", {
     className: "loader-container",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87,
+      lineNumber: 92,
       columnNumber: 9
     }
   }, __jsx(_Loader__WEBPACK_IMPORTED_MODULE_9__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88,
+      lineNumber: 93,
       columnNumber: 11
     }
   })), boardMap && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("div", {
@@ -262,7 +274,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92,
+      lineNumber: 97,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -270,7 +282,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93,
+      lineNumber: 98,
       columnNumber: 11
     }
   }, __jsx("div", {
@@ -278,7 +290,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94,
+      lineNumber: 99,
       columnNumber: 13
     }
   }, __jsx("input", {
@@ -289,7 +301,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95,
+      lineNumber: 100,
       columnNumber: 15
     }
   }), __jsx("button", {
@@ -298,7 +310,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96,
+      lineNumber: 101,
       columnNumber: 15
     }
   }, "Copy Link")))), __jsx("div", {
@@ -306,7 +318,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102,
+      lineNumber: 107,
       columnNumber: 9
     }
   }, __jsx(_components_Toggle__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -318,7 +330,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103,
+      lineNumber: 108,
       columnNumber: 11
     }
   })), __jsx(_components_ScoreBoard__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -327,7 +339,7 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105,
+      lineNumber: 110,
       columnNumber: 9
     }
   }), __jsx(_Board__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -337,14 +349,14 @@ function Index() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106,
+      lineNumber: 111,
       columnNumber: 9
     }
   })), __jsx("style", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108,
+      lineNumber: 113,
       columnNumber: 7
     }
   }, "\n        .game-title {\n          font-family: futura;\n          font-size: 45px;\n          margin-top: 20px;\n          align-self: center;\n          color: white;\n        }\n        .scoreBoard {\n          display: flex;\n          align-content: space-between;\n          align-self: center;\n          border: 1px solid white;\n          border-radius: 5px;\n          padding: 10px;\n          color: white;\n          font-weight: 500;\n        }\n        .score {\n          margin: 0 10px;\n          color: white;\n        }\n        main {\n          width: 100%;\n          display: flex;\n          flex-direction: column;\n          justify-content: center;\n        }\n        .loader-container {\n          justify-self: center;\n          align-self: center;\n        }\n        .toggleContainer {\n          width: 160px;\n          align-self: center;\n          margin: 20px 0;\n        }\n        .link-container {\n          width: 98vw;\n          max-width: 400px;\n          align-self: center;\n          font-size: 20px;\n          margin: 20px 0;\n        }\n      "));
@@ -646,12 +658,12 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 function NewGameButton(_ref) {
   var solid = _ref.solid,
-      _ref$officialWords = _ref.officialWords,
-      officialWords = _ref$officialWords === void 0 ? true : _ref$officialWords,
       _ref$setIsCodeMaster = _ref.setIsCodeMaster,
       setIsCodeMaster = _ref$setIsCodeMaster === void 0 ? null : _ref$setIsCodeMaster,
-      _ref$isGreenMode = _ref.isGreenMode,
-      isGreenMode = _ref$isGreenMode === void 0 ? false : _ref$isGreenMode;
+      _ref$version = _ref.version,
+      version = _ref$version === void 0 ? 'classic' : _ref$version,
+      _ref$wordsListLastGam = _ref.wordsListLastGame,
+      wordsListLastGame = _ref$wordsListLastGam === void 0 ? {} : _ref$wordsListLastGam;
 
   var newGame = function newGame() {
     if (setIsCodeMaster) setIsCodeMaster(false);
@@ -663,18 +675,18 @@ function NewGameButton(_ref) {
     var token = "".concat(random_words__WEBPACK_IMPORTED_MODULE_1___default()(), "-").concat(random_words__WEBPACK_IMPORTED_MODULE_1___default()(), "-").concat(randomInt(100, 999));
     var body = JSON.stringify({
       token: token,
-      officialWords: officialWords,
-      green: isGreenMode
+      version: version,
+      wordsListLastGame: wordsListLastGame
     });
-    next_router__WEBPACK_IMPORTED_MODULE_3___default.a.push("/game?token=".concat(token));
     isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_2___default()('/api/games', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body: body
-    }) // .then(() => Router.push(`/game?token=${token}`))
-    ["catch"](function (err) {
+    }).then(function () {
+      return next_router__WEBPACK_IMPORTED_MODULE_3___default.a.push("/game?token=".concat(token));
+    })["catch"](function (err) {
       console.error('Error adding new game: ', err);
       next_router__WEBPACK_IMPORTED_MODULE_3___default.a.push("/404");
     });
@@ -686,7 +698,7 @@ function NewGameButton(_ref) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33,
+      lineNumber: 32,
       columnNumber: 5
     }
   }, "New Game");
@@ -935,7 +947,7 @@ function ScoreBoard(_ref) {
       lineNumber: 52,
       columnNumber: 5
     }
-  }, " ", "\n      .score-board {\n        display: flex;\n        flex-direction: column;\n        width: 450px;\n        max-width: 100vw;\n        color: white;\n        font-weight: 600;\n        margin: 0 auto;\n      }\n      .team {\n        display: flex;\n        flex-direction: row;\n        margin-bottom: 5px;\n      }\n      .arrow {\n        flex-basis: 40%;\n        display: flex;\n        font-size: 15px;\n        justify-content: flex-end;\n        align-items: center;\n      }\n      .color-box {\n        flex-basis: 10%;\n        text-align: center;\n        padding: 5px; 2px;\n        margin: 0 10px;\n        border-radius: 5px;\n      }\n      .blue {\n        background: #0D659E;\n        border: 4px solid #005487;\n      }\n      .red {\n        background: #E03222;\n        border: 4px solid #CA0A05;\n      }\n      .green {\n        background: #12B142;\n        border: 4px solid #009526;\n      }\n      .final {\n        flex-basis: 100%;\n        font-size: 40px;\n        text-align: center;\n      }\n      .green-status {\n        flex-basis: 100%;\n        font-size: 30px;\n        text-align: center;\n      }\n      .team.green-team {\n        flex-basis: 100%;\n        display: flex;\n        justify-content: center;\n      }\n      .cards-remaining {\n        flex-basis: 60%;\n        display: flex;\n        align-items: center;\n      }\n      @media screen and (min-width: 480px) {\n        .arrow {\n          font-size: 20px;\n        }\n        .cards-remaining {\n          font-size: 20px;\n        }\n      }\n    "));
+  }, " ", "\n      .score-board {\n        display: flex;\n        flex-direction: column;\n        width: 450px;\n        max-width: 100vw;\n        color: white;\n        font-weight: 600;\n        margin: 0 auto;\n        justify-self: center;\n        align-self: center;\n      }\n      .team {\n        display: flex;\n        flex-direction: row;\n        margin-bottom: 5px;\n      }\n      .arrow {\n        flex-basis: 40%;\n        display: flex;\n        font-size: 15px;\n        justify-content: flex-end;\n        align-items: center;\n      }\n      .color-box {\n        flex-basis: 10%;\n        text-align: center;\n        padding: 5px; 2px;\n        margin: 0 10px;\n        border-radius: 5px;\n      }\n      .blue {\n        background: #0D659E;\n        border: 4px solid #005487;\n      }\n      .red {\n        background: #E03222;\n        border: 4px solid #CA0A05;\n      }\n      .green {\n        background: #12B142;\n        border: 4px solid #009526;\n      }\n      .final {\n        flex-basis: 100%;\n        font-size: 40px;\n        text-align: center;\n      }\n      .green-status {\n        flex-basis: 100%;\n        font-size: 30px;\n        text-align: center;\n      }\n      .team.green-team {\n        flex-basis: 100%;\n        display: flex;\n        justify-content: center;\n      }\n      .cards-remaining {\n        flex-basis: 60%;\n        display: flex;\n        align-items: center;\n      }\n      @media screen and (min-width: 480px) {\n        .arrow {\n          font-size: 20px;\n        }\n        .cards-remaining {\n          font-size: 20px;\n        }\n      }\n    "));
 }
 
 /***/ }),
