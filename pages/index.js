@@ -13,7 +13,6 @@ export default function Index() {
   // const [isGreenMode, setIsGreenMode] = useState(false);
   const [isUndercover, setIsUndercover] = useState(false);
   const [token, updateToken] = useState('');
-  console.log('token: ', token);
   let version = 'classic';
   if (!officialWords) version = 'randomWords';
   if (isUndercover) version = 'undercover';

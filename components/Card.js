@@ -10,9 +10,6 @@ export default function Card({ card, isCodeMaster, rowIndex, columnIndex, reveal
   let cardImage = '/card.png';
   if (isCodeMaster) {
     switch (team) {
-      case 0:
-        cardImage = '/card.png';
-        break;
       case 1:
         cardImage = '/redtint.png'
         break;

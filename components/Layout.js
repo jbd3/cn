@@ -2,7 +2,8 @@ export default function Layout({ children }) {
   return (
     <main className="layout">
       {children}
-      <footer><a href='https://paypal.me/bknyjake'>donate</a></footer>
+      {/* <footer><a href='https://paypal.me/bknyjake'>donate</a></footer> */}
+      <footer>A Quarantine Production 2020</footer>
       <style>{`
         .layout {
           background: rgb(253,220,0);
