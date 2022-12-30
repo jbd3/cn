@@ -16,7 +16,7 @@
     "next": "latest",
     "next-connect": "^0.6.1",
     "next-fonts": "^1.0.3",
-    "random-words": "^1.1.1",
+    "random-words": "^1.2.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "swr": "^0.1.15"
